@@ -27,7 +27,7 @@ Observable<String> getUserFriends =
 
 # Usage
 
-RxComprehensions contains a static method `forFM()` that takes from 2 to 9 functions each with an increasing number of parameters, and returns an Observable of the type of the last element.
+RxComprehensions contains a static method `forFM()` that takes from 2 to 9 `FuncN` each with an increasing number of parameters, and returns an Observable of the type of the last element.
 
 ```java
 Observable<String> getUserFriends =
