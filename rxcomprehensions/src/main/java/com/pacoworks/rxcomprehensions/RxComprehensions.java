@@ -1,17 +1,19 @@
 /*
- * Copyright (c) pakoito 2016
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ *  * Copyright (c) pakoito 2016
+ *  *
+ *  * Licensed under the Apache License, Version 2.0 (the "License");
+ *  * you may not use this file except in compliance with the License.
+ *  * You may obtain a copy of the License at
+ *  *
+ *  *    http://www.apache.org/licenses/LICENSE-2.0
+ *  *
+ *  * Unless required by applicable law or agreed to in writing, software
+ *  * distributed under the License is distributed on an "AS IS" BASIS,
+ *  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  * See the License for the specific language governing permissions and
+ *  * limitations under the License.
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 package com.pacoworks.rxcomprehensions;
@@ -29,10 +31,7 @@ import rx.functions.Func8;
 import rx.functions.Func9;
 
 /**
- * Helper class to memoize Functions to enable caching of results for same parameters.
- * <p/>
- * Every function wrapped adds a map check + one if branch for cache hit; or map check + if branch +
- * store value for a cache miss.
+ * Helper class to reduce boilerplate in Observable chains by abstracting flatMap.
  *
  * @author pakoito
  */
