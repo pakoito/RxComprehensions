@@ -27,7 +27,7 @@ Observable<String> getUserFriends =
 
 # Usage
 
-RxComprehensions contains static methods `doFM()` for `flatMap()`, `doCM()` for `concatMap()` and `doSM()` for `switchMap()`. Each takes from 2 to 9 `FuncN` each with an increasing number of parameters, and returns an Observable of the type of the return of the last functionF.
+RxComprehensions contains static methods `doFM()` for `flatMap()`, `doCM()` for `concatMap()` and `doSM()` for `switchMap()`. Each takes from 2 to 9 `FuncN` each with an increasing number of parameters, and returns an `Observable` of the type of the return of the last function.
 
 ```java
 Observable<String> getUserFriends =
