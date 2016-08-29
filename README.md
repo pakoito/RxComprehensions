@@ -27,12 +27,12 @@ Observable<String> getUserFriends =
 
 # Usage
 
-RxComprehensions contains static methods `forFM()` for `flatMap()`, `forCM()` for `concatMap()` and `forSM()` for `switchMap()`. Each takes from 2 to 9 `FuncN` each with an increasing number of parameters, and returns an Observable of the type of the return of the last functionF.
+RxComprehensions contains static methods `doFM()` for `flatMap()`, `doCM()` for `concatMap()` and `doSM()` for `switchMap()`. Each takes from 2 to 9 `FuncN` each with an increasing number of parameters, and returns an Observable of the type of the return of the last functionF.
 
 ```java
 Observable<String> getUserFriends =
     // chained with flatMap()
-    RxComprehensions.forFM(
+    RxComprehensions.doFM(
         () -> profileClicks(),
         position -> getUserFromProfile(position),
         position, user -> requestFriendListForUser(position, user.id),

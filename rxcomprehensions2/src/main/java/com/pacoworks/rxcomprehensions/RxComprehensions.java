@@ -46,7 +46,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, R> Observable<R> forFM(
+    public static <A, R> Observable<R> doFM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<R>> one) throws Exception {
         return zero.call()
@@ -63,7 +63,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, R> Observable<R> forFM(
+    public static <A, B, R> Observable<R> doFM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<R>> two) throws Exception {
@@ -87,7 +87,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, R> Observable<R> forFM(
+    public static <A, B, C, R> Observable<R> doFM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -118,7 +118,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, R> Observable<R> forFM(
+    public static <A, B, C, D, R> Observable<R> doFM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -156,7 +156,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, R> Observable<R> forFM(
+    public static <A, B, C, D, E, R> Observable<R> doFM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -201,7 +201,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, R> Observable<R> forFM(
+    public static <A, B, C, D, E, F, R> Observable<R> doFM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -253,7 +253,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, R> Observable<R> forFM(
+    public static <A, B, C, D, E, F, G, R> Observable<R> doFM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -312,7 +312,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, R> Observable<R> forFM(
+    public static <A, B, C, D, E, F, G, H, R> Observable<R> doFM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -378,7 +378,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> forFM(
+    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doFM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -451,7 +451,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, R> Observable<R> forCM(
+    public static <A, R> Observable<R> doCM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<R>> one) throws Exception {
         return zero.call()
@@ -468,7 +468,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, R> Observable<R> forCM(
+    public static <A, B, R> Observable<R> doCM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<R>> two) throws Exception {
@@ -492,7 +492,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, R> Observable<R> forCM(
+    public static <A, B, C, R> Observable<R> doCM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -523,7 +523,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, R> Observable<R> forCM(
+    public static <A, B, C, D, R> Observable<R> doCM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -561,7 +561,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, R> Observable<R> forCM(
+    public static <A, B, C, D, E, R> Observable<R> doCM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -606,7 +606,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, R> Observable<R> forCM(
+    public static <A, B, C, D, E, F, R> Observable<R> doCM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -658,7 +658,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, R> Observable<R> forCM(
+    public static <A, B, C, D, E, F, G, R> Observable<R> doCM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -717,7 +717,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, R> Observable<R> forCM(
+    public static <A, B, C, D, E, F, G, H, R> Observable<R> doCM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -783,7 +783,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> forCM(
+    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doCM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -856,7 +856,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, R> Observable<R> forSM(
+    public static <A, R> Observable<R> doSM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<R>> one) throws Exception {
         return zero.call()
@@ -873,7 +873,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, R> Observable<R> forSM(
+    public static <A, B, R> Observable<R> doSM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<R>> two) throws Exception {
@@ -897,7 +897,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, R> Observable<R> forSM(
+    public static <A, B, C, R> Observable<R> doSM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -928,7 +928,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, R> Observable<R> forSM(
+    public static <A, B, C, D, R> Observable<R> doSM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -966,7 +966,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, R> Observable<R> forSM(
+    public static <A, B, C, D, E, R> Observable<R> doSM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -1011,7 +1011,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, R> Observable<R> forSM(
+    public static <A, B, C, D, E, F, R> Observable<R> doSM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -1063,7 +1063,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, R> Observable<R> forSM(
+    public static <A, B, C, D, E, F, G, R> Observable<R> doSM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -1122,7 +1122,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, R> Observable<R> forSM(
+    public static <A, B, C, D, E, F, G, H, R> Observable<R> doSM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -1188,7 +1188,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> forSM(
+    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doSM(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,

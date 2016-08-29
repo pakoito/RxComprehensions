@@ -45,7 +45,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, R> Observable<R> forFM(
+    public static <A, R> Observable<R> doFM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<R>> one) {
         return zero.call().flatMap(new Func1<A, Observable<R>>() {
@@ -61,7 +61,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, R> Observable<R> forFM(
+    public static <A, B, R> Observable<R> doFM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<R>> two) {
@@ -83,7 +83,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, R> Observable<R> forFM(
+    public static <A, B, C, R> Observable<R> doFM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -111,7 +111,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, R> Observable<R> forFM(
+    public static <A, B, C, D, R> Observable<R> doFM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -145,7 +145,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, R> Observable<R> forFM(
+    public static <A, B, C, D, E, R> Observable<R> doFM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -185,7 +185,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, R> Observable<R> forFM(
+    public static <A, B, C, D, E, F, R> Observable<R> doFM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -231,7 +231,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, R> Observable<R> forFM(
+    public static <A, B, C, D, E, F, G, R> Observable<R> doFM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -283,7 +283,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, R> Observable<R> forFM(
+    public static <A, B, C, D, E, F, G, H, R> Observable<R> doFM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -341,7 +341,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> forFM(
+    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doFM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -405,7 +405,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, R> Observable<R> forCM(
+    public static <A, R> Observable<R> doCM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<R>> one) {
         return zero.call().concatMap(new Func1<A, Observable<R>>() {
@@ -421,7 +421,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, R> Observable<R> forCM(
+    public static <A, B, R> Observable<R> doCM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<R>> two) {
@@ -443,7 +443,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, R> Observable<R> forCM(
+    public static <A, B, C, R> Observable<R> doCM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -471,7 +471,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, R> Observable<R> forCM(
+    public static <A, B, C, D, R> Observable<R> doCM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -505,7 +505,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, R> Observable<R> forCM(
+    public static <A, B, C, D, E, R> Observable<R> doCM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -545,7 +545,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, R> Observable<R> forCM(
+    public static <A, B, C, D, E, F, R> Observable<R> doCM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -591,7 +591,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, R> Observable<R> forCM(
+    public static <A, B, C, D, E, F, G, R> Observable<R> doCM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -643,7 +643,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, R> Observable<R> forCM(
+    public static <A, B, C, D, E, F, G, H, R> Observable<R> doCM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -701,7 +701,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> forCM(
+    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doCM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -765,7 +765,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, R> Observable<R> forSM(
+    public static <A, R> Observable<R> doSM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<R>> one) {
         return zero.call().switchMap(new Func1<A, Observable<R>>() {
@@ -781,7 +781,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, R> Observable<R> forSM(
+    public static <A, B, R> Observable<R> doSM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<R>> two) {
@@ -803,7 +803,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, R> Observable<R> forSM(
+    public static <A, B, C, R> Observable<R> doSM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -831,7 +831,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, R> Observable<R> forSM(
+    public static <A, B, C, D, R> Observable<R> doSM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -865,7 +865,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, R> Observable<R> forSM(
+    public static <A, B, C, D, E, R> Observable<R> doSM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -905,7 +905,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, R> Observable<R> forSM(
+    public static <A, B, C, D, E, F, R> Observable<R> doSM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -951,7 +951,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, R> Observable<R> forSM(
+    public static <A, B, C, D, E, F, G, R> Observable<R> doSM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -1003,7 +1003,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, R> Observable<R> forSM(
+    public static <A, B, C, D, E, F, G, H, R> Observable<R> doSM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
@@ -1061,7 +1061,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> forSM(
+    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doSM(
             final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
