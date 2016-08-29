@@ -46,9 +46,9 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, R> Observable<R> forFM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<R>> one) {
-        return func0.call().flatMap(new Func1<A, Observable<R>>() {
+        return zero.call().flatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a);
@@ -62,10 +62,10 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, R> Observable<R> forFM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<R>> two) {
-        return func0.call().flatMap(new Func1<A, Observable<R>>() {
+        return zero.call().flatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).flatMap(new Func1<B, Observable<R>>() {
@@ -84,11 +84,11 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, R> Observable<R> forFM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<R>> three) {
-        return func0.call().flatMap(new Func1<A, Observable<R>>() {
+        return zero.call().flatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).flatMap(new Func1<B, Observable<R>>() {
@@ -112,12 +112,12 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, R> Observable<R> forFM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
             final Func4<A, B, C, D, Observable<R>> four) {
-        return func0.call().flatMap(new Func1<A, Observable<R>>() {
+        return zero.call().flatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).flatMap(new Func1<B, Observable<R>>() {
@@ -146,13 +146,13 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, E, R> Observable<R> forFM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
             final Func4<A, B, C, D, Observable<E>> four,
             final Func5<A, B, C, D, E, Observable<R>> five) {
-        return func0.call().flatMap(new Func1<A, Observable<R>>() {
+        return zero.call().flatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).flatMap(new Func1<B, Observable<R>>() {
@@ -186,14 +186,14 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, E, F, R> Observable<R> forFM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
             final Func4<A, B, C, D, Observable<E>> four,
             final Func5<A, B, C, D, E, Observable<F>> five,
             final Func6<A, B, C, D, E, F, Observable<R>> six) {
-        return func0.call().flatMap(new Func1<A, Observable<R>>() {
+        return zero.call().flatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).flatMap(new Func1<B, Observable<R>>() {
@@ -232,7 +232,7 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, E, F, G, R> Observable<R> forFM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
@@ -240,7 +240,7 @@ public final class RxComprehensions {
             final Func5<A, B, C, D, E, Observable<F>> five,
             final Func6<A, B, C, D, E, F, Observable<G>> six,
             final Func7<A, B, C, D, E, F, G, Observable<R>> seven) {
-        return func0.call().flatMap(new Func1<A, Observable<R>>() {
+        return zero.call().flatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).flatMap(new Func1<B, Observable<R>>() {
@@ -284,7 +284,7 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, E, F, G, H, R> Observable<R> forFM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
@@ -293,7 +293,7 @@ public final class RxComprehensions {
             final Func6<A, B, C, D, E, F, Observable<G>> six,
             final Func7<A, B, C, D, E, F, G, Observable<H>> seven,
             final Func8<A, B, C, D, E, F, G, H, Observable<R>> eight) {
-        return func0.call().flatMap(new Func1<A, Observable<R>>() {
+        return zero.call().flatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).flatMap(new Func1<B, Observable<R>>() {
@@ -342,7 +342,7 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, E, F, G, H, I, R> Observable<R> forFM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
@@ -352,7 +352,7 @@ public final class RxComprehensions {
             final Func7<A, B, C, D, E, F, G, Observable<H>> seven,
             final Func8<A, B, C, D, E, F, G, H, Observable<I>> eight,
             final Func9<A, B, C, D, E, F, G, H, I, Observable<R>> nine) {
-        return func0.call().flatMap(new Func1<A, Observable<R>>() {
+        return zero.call().flatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).flatMap(new Func1<B, Observable<R>>() {
@@ -406,9 +406,9 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, R> Observable<R> forCM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<R>> one) {
-        return func0.call().concatMap(new Func1<A, Observable<R>>() {
+        return zero.call().concatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a);
@@ -422,10 +422,10 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, R> Observable<R> forCM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<R>> two) {
-        return func0.call().concatMap(new Func1<A, Observable<R>>() {
+        return zero.call().concatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).concatMap(new Func1<B, Observable<R>>() {
@@ -444,11 +444,11 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, R> Observable<R> forCM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<R>> three) {
-        return func0.call().concatMap(new Func1<A, Observable<R>>() {
+        return zero.call().concatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).concatMap(new Func1<B, Observable<R>>() {
@@ -472,12 +472,12 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, R> Observable<R> forCM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
             final Func4<A, B, C, D, Observable<R>> four) {
-        return func0.call().concatMap(new Func1<A, Observable<R>>() {
+        return zero.call().concatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).concatMap(new Func1<B, Observable<R>>() {
@@ -506,13 +506,13 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, E, R> Observable<R> forCM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
             final Func4<A, B, C, D, Observable<E>> four,
             final Func5<A, B, C, D, E, Observable<R>> five) {
-        return func0.call().concatMap(new Func1<A, Observable<R>>() {
+        return zero.call().concatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).concatMap(new Func1<B, Observable<R>>() {
@@ -546,14 +546,14 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, E, F, R> Observable<R> forCM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
             final Func4<A, B, C, D, Observable<E>> four,
             final Func5<A, B, C, D, E, Observable<F>> five,
             final Func6<A, B, C, D, E, F, Observable<R>> six) {
-        return func0.call().concatMap(new Func1<A, Observable<R>>() {
+        return zero.call().concatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).concatMap(new Func1<B, Observable<R>>() {
@@ -592,7 +592,7 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, E, F, G, R> Observable<R> forCM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
@@ -600,7 +600,7 @@ public final class RxComprehensions {
             final Func5<A, B, C, D, E, Observable<F>> five,
             final Func6<A, B, C, D, E, F, Observable<G>> six,
             final Func7<A, B, C, D, E, F, G, Observable<R>> seven) {
-        return func0.call().concatMap(new Func1<A, Observable<R>>() {
+        return zero.call().concatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).concatMap(new Func1<B, Observable<R>>() {
@@ -644,7 +644,7 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, E, F, G, H, R> Observable<R> forCM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
@@ -653,7 +653,7 @@ public final class RxComprehensions {
             final Func6<A, B, C, D, E, F, Observable<G>> six,
             final Func7<A, B, C, D, E, F, G, Observable<H>> seven,
             final Func8<A, B, C, D, E, F, G, H, Observable<R>> eight) {
-        return func0.call().concatMap(new Func1<A, Observable<R>>() {
+        return zero.call().concatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).concatMap(new Func1<B, Observable<R>>() {
@@ -702,7 +702,7 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, E, F, G, H, I, R> Observable<R> forCM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
@@ -712,7 +712,7 @@ public final class RxComprehensions {
             final Func7<A, B, C, D, E, F, G, Observable<H>> seven,
             final Func8<A, B, C, D, E, F, G, H, Observable<I>> eight,
             final Func9<A, B, C, D, E, F, G, H, I, Observable<R>> nine) {
-        return func0.call().concatMap(new Func1<A, Observable<R>>() {
+        return zero.call().concatMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).concatMap(new Func1<B, Observable<R>>() {
@@ -766,9 +766,9 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, R> Observable<R> forSM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<R>> one) {
-        return func0.call().switchMap(new Func1<A, Observable<R>>() {
+        return zero.call().switchMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a);
@@ -782,10 +782,10 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, R> Observable<R> forSM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<R>> two) {
-        return func0.call().switchMap(new Func1<A, Observable<R>>() {
+        return zero.call().switchMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).switchMap(new Func1<B, Observable<R>>() {
@@ -804,11 +804,11 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, R> Observable<R> forSM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<R>> three) {
-        return func0.call().switchMap(new Func1<A, Observable<R>>() {
+        return zero.call().switchMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).switchMap(new Func1<B, Observable<R>>() {
@@ -832,12 +832,12 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, R> Observable<R> forSM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
             final Func4<A, B, C, D, Observable<R>> four) {
-        return func0.call().switchMap(new Func1<A, Observable<R>>() {
+        return zero.call().switchMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).switchMap(new Func1<B, Observable<R>>() {
@@ -866,13 +866,13 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, E, R> Observable<R> forSM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
             final Func4<A, B, C, D, Observable<E>> four,
             final Func5<A, B, C, D, E, Observable<R>> five) {
-        return func0.call().switchMap(new Func1<A, Observable<R>>() {
+        return zero.call().switchMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).switchMap(new Func1<B, Observable<R>>() {
@@ -906,14 +906,14 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, E, F, R> Observable<R> forSM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
             final Func4<A, B, C, D, Observable<E>> four,
             final Func5<A, B, C, D, E, Observable<F>> five,
             final Func6<A, B, C, D, E, F, Observable<R>> six) {
-        return func0.call().switchMap(new Func1<A, Observable<R>>() {
+        return zero.call().switchMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).switchMap(new Func1<B, Observable<R>>() {
@@ -952,7 +952,7 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, E, F, G, R> Observable<R> forSM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
@@ -960,7 +960,7 @@ public final class RxComprehensions {
             final Func5<A, B, C, D, E, Observable<F>> five,
             final Func6<A, B, C, D, E, F, Observable<G>> six,
             final Func7<A, B, C, D, E, F, G, Observable<R>> seven) {
-        return func0.call().switchMap(new Func1<A, Observable<R>>() {
+        return zero.call().switchMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).switchMap(new Func1<B, Observable<R>>() {
@@ -1004,7 +1004,7 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, E, F, G, H, R> Observable<R> forSM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
@@ -1013,7 +1013,7 @@ public final class RxComprehensions {
             final Func6<A, B, C, D, E, F, Observable<G>> six,
             final Func7<A, B, C, D, E, F, G, Observable<H>> seven,
             final Func8<A, B, C, D, E, F, G, H, Observable<R>> eight) {
-        return func0.call().switchMap(new Func1<A, Observable<R>>() {
+        return zero.call().switchMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).switchMap(new Func1<B, Observable<R>>() {
@@ -1062,7 +1062,7 @@ public final class RxComprehensions {
      * @return composed Observable
      */
     public static <A, B, C, D, E, F, G, H, I, R> Observable<R> forSM(
-            final Func0<Observable<A>> func0,
+            final Func0<Observable<A>> zero,
             final Func1<A, Observable<B>> one,
             final Func2<A, B, Observable<C>> two,
             final Func3<A, B, C, Observable<D>> three,
@@ -1072,7 +1072,7 @@ public final class RxComprehensions {
             final Func7<A, B, C, D, E, F, G, Observable<H>> seven,
             final Func8<A, B, C, D, E, F, G, H, Observable<I>> eight,
             final Func9<A, B, C, D, E, F, G, H, I, Observable<R>> nine) {
-        return func0.call().switchMap(new Func1<A, Observable<R>>() {
+        return zero.call().switchMap(new Func1<A, Observable<R>>() {
             @Override
             public Observable<R> call(final A a) {
                 return one.call(a).switchMap(new Func1<B, Observable<R>>() {
