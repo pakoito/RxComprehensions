@@ -1,17 +1,19 @@
 /*
- * Copyright (c) pakoito 2016
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ *  * Copyright (c) pakoito 2016
+ *  *
+ *  * Licensed under the Apache License, Version 2.0 (the "License");
+ *  * you may not use this file except in compliance with the License.
+ *  * You may obtain a copy of the License at
+ *  *
+ *  *    http://www.apache.org/licenses/LICENSE-2.0
+ *  *
+ *  * Unless required by applicable law or agreed to in writing, software
+ *  * distributed under the License is distributed on an "AS IS" BASIS,
+ *  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  * See the License for the specific language governing permissions and
+ *  * limitations under the License.
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 package com.pacoworks.rxcomprehensions;
@@ -79,6 +81,106 @@ public class RxComprehensionsTest {
     public void nineFM() throws Exception {
         final TestObserver<Object> observer = TestObserver.create();
         RxComprehensions.forFM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class), this.<Long>nine()).subscribe(observer);
+        observer.awaitTerminalEvent();
+        observer.assertComplete();
+        observer.assertNoErrors();
+        observer.assertResult(1, true, "result", "other", (long) "other".length(), "other".length() < 5, Boolean.toString(false), false, Long.class);
+    }
+
+    @Test
+    public void oneCM() throws Exception {
+        Assert.assertEquals(RxComprehensions.forCM(zero(1), one(true)).blockingFirst(), true);
+    }
+
+    @Test
+    public void twoCM() throws Exception {
+        Assert.assertEquals(RxComprehensions.forCM(zero(2), one(true), two("result")).blockingFirst(), "result");
+    }
+
+    @Test
+    public void threeCM() throws Exception {
+        Assert.assertEquals(RxComprehensions.forCM(zero(3), one(true), two("result"), three("other")).blockingFirst(), "other");
+    }
+
+    @Test
+    public void fourCM() throws Exception {
+        Assert.assertEquals(RxComprehensions.forCM(zero(4), one(true), two("result"), three("other"), four("other".length())).blockingFirst(), new Long("other".length()));
+    }
+
+    @Test
+    public void fiveCM() throws Exception {
+        Assert.assertEquals(RxComprehensions.forCM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5)).blockingFirst(), false);
+    }
+
+    @Test
+    public void sixCM() throws Exception {
+        Assert.assertEquals(RxComprehensions.forCM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false))).blockingFirst(), "false");
+    }
+
+    @Test
+    public void sevenCM() throws Exception {
+        Assert.assertEquals(RxComprehensions.forCM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false)), seven("true")).blockingFirst(), false);
+    }
+
+    @Test
+    public void eightCM() throws Exception {
+        Assert.assertEquals(RxComprehensions.forCM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class)).blockingFirst(), Long.class);
+    }
+
+    @Test
+    public void nineCM() throws Exception {
+        final TestObserver<Object> observer = TestObserver.create();
+        RxComprehensions.forCM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class), this.<Long>nine()).subscribe(observer);
+        observer.awaitTerminalEvent();
+        observer.assertComplete();
+        observer.assertNoErrors();
+        observer.assertResult(1, true, "result", "other", (long) "other".length(), "other".length() < 5, Boolean.toString(false), false, Long.class);
+    }
+
+    @Test
+    public void oneSM() throws Exception {
+        Assert.assertEquals(RxComprehensions.forSM(zero(1), one(true)).blockingFirst(), true);
+    }
+
+    @Test
+    public void twoSM() throws Exception {
+        Assert.assertEquals(RxComprehensions.forSM(zero(2), one(true), two("result")).blockingFirst(), "result");
+    }
+
+    @Test
+    public void threeSM() throws Exception {
+        Assert.assertEquals(RxComprehensions.forSM(zero(3), one(true), two("result"), three("other")).blockingFirst(), "other");
+    }
+
+    @Test
+    public void fourSM() throws Exception {
+        Assert.assertEquals(RxComprehensions.forSM(zero(4), one(true), two("result"), three("other"), four("other".length())).blockingFirst(), new Long("other".length()));
+    }
+
+    @Test
+    public void fiveSM() throws Exception {
+        Assert.assertEquals(RxComprehensions.forSM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5)).blockingFirst(), false);
+    }
+
+    @Test
+    public void sixSM() throws Exception {
+        Assert.assertEquals(RxComprehensions.forSM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false))).blockingFirst(), "false");
+    }
+
+    @Test
+    public void sevenSM() throws Exception {
+        Assert.assertEquals(RxComprehensions.forSM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false)), seven("true")).blockingFirst(), false);
+    }
+
+    @Test
+    public void eightSM() throws Exception {
+        Assert.assertEquals(RxComprehensions.forSM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class)).blockingFirst(), Long.class);
+    }
+
+    @Test
+    public void nineSM() throws Exception {
+        final TestObserver<Object> observer = TestObserver.create();
+        RxComprehensions.forSM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class), this.<Long>nine()).subscribe(observer);
         observer.awaitTerminalEvent();
         observer.assertComplete();
         observer.assertNoErrors();
