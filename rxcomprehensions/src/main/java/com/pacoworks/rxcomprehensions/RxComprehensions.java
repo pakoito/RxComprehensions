@@ -31,7 +31,7 @@ import rx.functions.Func8;
 import rx.functions.Func9;
 
 /**
- * Helper class to reduce boilerplate introduced by nested {@link Observable#flatMap(Func1)}, {@link Observable#concatMap(Func1)}, and {@link Observable#swicthMap(Func1)} calls.
+ * Helper class to reduce boilerplate introduced by nested {@link Observable#flatMap(Func1)}, {@link Observable#concatMap(Func1)}, and {@link Observable#switchMap(Func1)} calls.
  *
  * @author pakoito
  */
