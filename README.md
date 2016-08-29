@@ -4,7 +4,7 @@ RxComprehensions is a library to reduce boilerplate and simplify your `Observabl
 
 # Rationale
 
-As your code starts getting more and more functional, you find that you have to chain multiple `Observable` by means of `flatMap()`. This causes indentation levels to go quite high, and would often require that you split the code in several methods just to keep it readable.
+As your code starts getting more and more functional, you find that you have to chain multiple `Observable` by means of `flatMap()`, `concatMap()`, or `switchMap()`. This causes indentation levels to go quite high, and would often require that you split the code in several methods just to keep it readable.
 
 ```java
 Observable<String> getUserFriends =
@@ -27,7 +27,7 @@ Observable<String> getUserFriends =
 
 # Usage
 
-RxComprehensions contains a static method `forFM()` that takes from 2 to 9 `FuncN` each with an increasing number of parameters, and returns an Observable of the type of the last element.
+RxComprehensions contains static methods `forFM()`, `forCM()` and `forSM()`, that take from 2 to 9 `FuncN` each with an increasing number of parameters, and returns an Observable of the type of the last element.
 
 ```java
 Observable<String> getUserFriends =
