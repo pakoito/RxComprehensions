@@ -68,8 +68,8 @@ or to your `pom.xml`
 
 <dependency>
     <groupId>com.github.pakoito</groupId>
-    <artifactId>RxMemoization</artifactId>
-    <version>1.1.0</version>
+    <artifactId>RxComprehensions</artifactId>
+    <version>1.0.0</version>
 </dependency>
 ```
 

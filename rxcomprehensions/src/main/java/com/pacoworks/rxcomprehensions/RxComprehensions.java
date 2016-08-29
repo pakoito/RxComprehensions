@@ -31,7 +31,7 @@ import rx.functions.Func8;
 import rx.functions.Func9;
 
 /**
- * Helper class to reduce boilerplate in Observable chains by abstracting flatMap.
+ * Helper class to reduce boilerplate introduced by nested {@link Observable#flatMap(Func1)} calls.
  *
  * @author pakoito
  */
@@ -41,7 +41,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link rx.Observable} from multiple creation functions chained by flatMap.
+     * Composes an {@link rx.Observable} from multiple creation functions chained by {@link Observable#flatMap(Func1)}.
      *
      * @return composed Observable
      */
@@ -57,7 +57,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link rx.Observable} from multiple creation functions chained by flatMap.
+     * Composes an {@link rx.Observable} from multiple creation functions chained by {@link Observable#flatMap(Func1)}.
      *
      * @return composed Observable
      */
@@ -79,7 +79,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link rx.Observable} from multiple creation functions chained by flatMap.
+     * Composes an {@link rx.Observable} from multiple creation functions chained by {@link Observable#flatMap(Func1)}.
      *
      * @return composed Observable
      */
@@ -107,7 +107,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link rx.Observable} from multiple creation functions chained by flatMap.
+     * Composes an {@link rx.Observable} from multiple creation functions chained by {@link Observable#flatMap(Func1)}.
      *
      * @return composed Observable
      */
@@ -141,7 +141,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link rx.Observable} from multiple creation functions chained by flatMap.
+     * Composes an {@link rx.Observable} from multiple creation functions chained by {@link Observable#flatMap(Func1)}.
      *
      * @return composed Observable
      */
@@ -181,7 +181,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link rx.Observable} from multiple creation functions chained by flatMap.
+     * Composes an {@link rx.Observable} from multiple creation functions chained by {@link Observable#flatMap(Func1)}.
      *
      * @return composed Observable
      */
@@ -227,7 +227,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link rx.Observable} from multiple creation functions chained by flatMap.
+     * Composes an {@link rx.Observable} from multiple creation functions chained by {@link Observable#flatMap(Func1)}.
      *
      * @return composed Observable
      */
@@ -279,7 +279,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link rx.Observable} from multiple creation functions chained by flatMap.
+     * Composes an {@link rx.Observable} from multiple creation functions chained by {@link Observable#flatMap(Func1)}.
      *
      * @return composed Observable
      */
@@ -337,7 +337,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link rx.Observable} from multiple creation functions chained by flatMap.
+     * Composes an {@link rx.Observable} from multiple creation functions chained by {@link Observable#flatMap(Func1)}.
      *
      * @return composed Observable
      */

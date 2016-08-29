@@ -32,7 +32,7 @@ import io.reactivex.functions.Function8;
 import io.reactivex.functions.Function9;
 
 /**
- * Helper class to reduce boilerplate in Observable chains by abstracting flatMap.
+ * Helper class to reduce boilerplate introduced by nested {@link Observable#flatMap(Function)} calls.
  *
  * @author pakoito
  */
@@ -42,8 +42,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by
-     * .flatMap.
+     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by {@link Observable#flatMap(Function)}.
      *
      * @return composed Observable
      */
@@ -60,8 +59,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by
-     * .flatMap.
+     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by {@link Observable#flatMap(Function)}.
      *
      * @return composed Observable
      */
@@ -85,8 +83,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by
-     * .flatMap.
+     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by {@link Observable#flatMap(Function)}.
      *
      * @return composed Observable
      */
@@ -117,8 +114,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by
-     * .flatMap.
+     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by {@link Observable#flatMap(Function)}.
      *
      * @return composed Observable
      */
@@ -156,8 +152,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by
-     * .flatMap.
+     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by {@link Observable#flatMap(Function)}.
      *
      * @return composed Observable
      */
@@ -202,8 +197,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by
-     * .flatMap.
+     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by {@link Observable#flatMap(Function)}.
      *
      * @return composed Observable
      */
@@ -255,8 +249,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by
-     * .flatMap.
+     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by {@link Observable#flatMap(Function)}.
      *
      * @return composed Observable
      */
@@ -315,8 +308,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by
-     * .flatMap.
+     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by {@link Observable#flatMap(Function)}.
      *
      * @return composed Observable
      */
@@ -382,8 +374,7 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by
-     * .flatMap.
+     * Composes an {@link io.reactivex.Observable} from multiple creation functions chained by {@link Observable#flatMap(Function)}.
      *
      * @return composed Observable
      */
