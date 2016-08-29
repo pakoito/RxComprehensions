@@ -38,7 +38,7 @@ Observable<String> getUserFriends =
         position, user -> requestFriendListForUser(position, user.id),
         position, user, friends -> storeUserAndFriends(user, friends),
         position, user, friends, result -> toUserDisplayString(position, user, friends, result)
-    )
+    );
 ```
 
 ##Distribution
