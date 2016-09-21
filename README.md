@@ -27,7 +27,7 @@ Observable<String> getUserFriends =
 
 # Usage
 
-RxComprehensions contains static methods `doFM()` for `flatMap()`, `doCM()` for `concatMap()` and `doSM()` for `switchMap()`. Each takes from 2 to 9 `FuncN` each with an increasing number of parameters, and returns an `Observable` of the type of the return of the last function.
+RxComprehensions contains static methods `doFM()` for `flatMap()`, `doCM()` for `concatMap()`, and `doSM()` for `switchMap()`. Each takes from 2 to 9 `FuncN` each with an increasing number of parameters, and returns an `Observable` of the type of the return of the last function.
 
 ```java
 Observable<String> getUserFriends =
@@ -42,6 +42,8 @@ Observable<String> getUserFriends =
 ```
 
 ##Distribution
+
+###RxJava 1.X
 
 Add as a dependency to your `build.gradle`
 ```groovy
@@ -70,6 +72,39 @@ or to your `pom.xml`
 <dependency>
     <groupId>com.github.pakoito</groupId>
     <artifactId>RxComprehensions</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+###RxJava 2.X
+
+Add as a dependency to your `build.gradle`
+```groovy
+repositories {
+    ...
+    maven { url "https://jitpack.io" }
+    ...
+}
+    
+dependencies {
+    ...
+    compile 'com.github.pakoito:RxComprehensions2:1.0.0'
+    ...
+}
+```
+or to your `pom.xml`
+
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+<dependency>
+    <groupId>com.github.pakoito</groupId>
+    <artifactId>RxComprehensions2</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
