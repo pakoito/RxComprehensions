@@ -55,7 +55,7 @@ repositories {
     
 dependencies {
     ...
-    compile 'com.github.pakoito:RxComprehensions:1.0.0'
+    compile 'com.github.pakoito.RxComprehensions:rxcomprehensions:1.0.0'
     ...
 }
 ```
@@ -70,8 +70,8 @@ or to your `pom.xml`
 </repositories>
 
 <dependency>
-    <groupId>com.github.pakoito</groupId>
-    <artifactId>RxComprehensions</artifactId>
+    <groupId>com.github.pakoito.RxComprehensions</groupId>
+    <artifactId>rxcomprehensions</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
@@ -88,7 +88,7 @@ repositories {
     
 dependencies {
     ...
-    compile 'com.github.pakoito:RxComprehensions2:1.0.0'
+    compile 'com.github.pakoito.RxComprehensions:rxcomprehensions2:1.0.0'
     ...
 }
 ```
@@ -103,8 +103,8 @@ or to your `pom.xml`
 </repositories>
 
 <dependency>
-    <groupId>com.github.pakoito</groupId>
-    <artifactId>RxComprehensions2</artifactId>
+    <groupId>com.github.pakoito.RxComprehensions</groupId>
+    <artifactId>rxcomprehensions2</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
