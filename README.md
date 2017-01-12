@@ -56,7 +56,7 @@ Observable<List<Siblings>> getRelatives =
         assureThreads(Schedulers.io(), AndroidSchedulers.main()),
         respectLifecycle(activity),
         toUILayerModel(),
-        groupSiblings(),
+        groupSiblings()
     );
 
 Observable<RelativeDto> requestRelative(String id) { /* ... */ }
