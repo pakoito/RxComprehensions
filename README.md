@@ -51,13 +51,15 @@ RxComprehensions contains static methods `doCo()` for `compose()`. Each takes fr
 Observable<List<Siblings>> getRelatives =
     // chained with compose()
     RxComprehensions.doCo(
-        () -> requestRelative("id"),
+        () -> requestRelative("12345"),
         validate(),
         assureThreads(),
         respectLifecycle(),
         toUILayerModel(),
         groupSiblings(),
     );
+
+Observable<RelativeDto> requestRelative(String id) { /* ... */ }
 
 Transformer<RelativeDto, RelativeDto> validate() { /* ... */ }
 
