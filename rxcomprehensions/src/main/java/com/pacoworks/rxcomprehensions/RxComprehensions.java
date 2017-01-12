@@ -17,6 +17,7 @@
 package com.pacoworks.rxcomprehensions;
 
 import rx.Observable;
+import rx.Observable.Transformer;
 import rx.functions.Func0;
 import rx.functions.Func1;
 import rx.functions.Func2;
@@ -1116,5 +1117,185 @@ public final class RxComprehensions {
                 });
             }
         });
+    }
+
+    /**
+     * Composes an {@link rx.Observable} from multiple {@link Transformer} chained by {@link Observable#compose(Transformer)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, R> Observable<R> doCo(
+            final Func0<Observable<A>> zero,
+            final Transformer<A, R> one) {
+        return zero.call()
+                .compose(one);
+    }
+
+    /**
+     * Composes an {@link rx.Observable} from multiple {@link Transformer} chained by {@link Observable#compose(Transformer)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, B, R> Observable<R> doCo(
+            final Func0<Observable<A>> zero,
+            final Transformer<A, B> one,
+            final Transformer<B, R> two) {
+        return zero.call()
+                .compose(one)
+                .compose(two);
+    }
+
+    /**
+     * Composes an {@link rx.Observable} from multiple {@link Transformer} chained by {@link Observable#compose(Transformer)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, B, C, R> Observable<R> doCo(
+            final Func0<Observable<A>> zero,
+            final Transformer<A, B> one,
+            final Transformer<B, C> two,
+            final Transformer<C, R> three) {
+        return zero.call()
+                .compose(one)
+                .compose(two)
+                .compose(three);
+    }
+
+    /**
+     * Composes an {@link rx.Observable} from multiple {@link Transformer} chained by {@link Observable#compose(Transformer)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, B, C, D, R> Observable<R> doCo(
+            final Func0<Observable<A>> zero,
+            final Transformer<A, B> one,
+            final Transformer<B, C> two,
+            final Transformer<C, D> three,
+            final Transformer<D, R> four) {
+        return zero.call()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four);
+    }
+
+    /**
+     * Composes an {@link rx.Observable} from multiple {@link Transformer} chained by {@link Observable#compose(Transformer)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, B, C, D, E, R> Observable<R> doCo(
+            final Func0<Observable<A>> zero,
+            final Transformer<A, B> one,
+            final Transformer<B, C> two,
+            final Transformer<C, D> three,
+            final Transformer<D, E> four,
+            final Transformer<E, R> five) {
+        return zero.call()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four)
+                .compose(five);
+    }
+
+    /**
+     * Composes an {@link rx.Observable} from multiple {@link Transformer} chained by {@link Observable#compose(Transformer)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, B, C, D, E, F, R> Observable<R> doCo(
+            final Func0<Observable<A>> zero,
+            final Transformer<A, B> one,
+            final Transformer<B, C> two,
+            final Transformer<C, D> three,
+            final Transformer<D, E> four,
+            final Transformer<E, F> five,
+            final Transformer<F, R> six) {
+        return zero.call()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four)
+                .compose(five)
+                .compose(six);
+    }
+
+    /**
+     * Composes an {@link rx.Observable} from multiple {@link Transformer} chained by {@link Observable#compose(Transformer)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, B, C, D, E, F, G, R> Observable<R> doCo(
+            final Func0<Observable<A>> zero,
+            final Transformer<A, B> one,
+            final Transformer<B, C> two,
+            final Transformer<C, D> three,
+            final Transformer<D, E> four,
+            final Transformer<E, F> five,
+            final Transformer<F, G> six,
+            final Transformer<G, R> seven) {
+        return zero.call()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four)
+                .compose(five)
+                .compose(six)
+                .compose(seven);
+    }
+
+    /**
+     * Composes an {@link rx.Observable} from multiple {@link Transformer} chained by {@link Observable#compose(Transformer)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, B, C, D, E, F, G, H, R> Observable<R> doCo(
+            final Func0<Observable<A>> zero,
+            final Transformer<A, B> one,
+            final Transformer<B, C> two,
+            final Transformer<C, D> three,
+            final Transformer<D, E> four,
+            final Transformer<E, F> five,
+            final Transformer<F, G> six,
+            final Transformer<G, H> seven,
+            final Transformer<H, R> eight) {
+        return zero.call()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four)
+                .compose(five)
+                .compose(six)
+                .compose(seven)
+                .compose(eight);
+    }
+
+    /**
+     * Composes an {@link rx.Observable} from multiple {@link Transformer} chained by {@link Observable#compose(Transformer)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doCo(
+            final Func0<Observable<A>> zero,
+            final Transformer<A, B> one,
+            final Transformer<B, C> two,
+            final Transformer<C, D> three,
+            final Transformer<D, E> four,
+            final Transformer<E, F> five,
+            final Transformer<F, G> six,
+            final Transformer<G, H> seven,
+            final Transformer<H, I> eight,
+            final Transformer<I, R> nine) {
+        return zero.call()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four)
+                .compose(five)
+                .compose(six)
+                .compose(seven)
+                .compose(eight)
+                .compose(nine);
     }
 }

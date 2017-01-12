@@ -1253,4 +1253,185 @@ public final class RxComprehensions {
                     }
                 });
     }
+
+
+    /**
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, R> Observable<R> doCo(
+            final Callable<Observable<A>> zero,
+            final Function<Observable<A>, Observable<R>> one) throws Exception {
+        return zero.call()
+                .compose(one);
+    }
+
+    /**
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, B, R> Observable<R> doCo(
+            final Callable<Observable<A>> zero,
+            final Function<Observable<A>, Observable<B>> one,
+            final Function<Observable<B>, Observable<R>> two) throws Exception {
+        return zero.call()
+                .compose(one)
+                .compose(two);
+    }
+
+    /**
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, B, C, R> Observable<R> doCo(
+            final Callable<Observable<A>> zero,
+            final Function<Observable<A>, Observable<B>> one,
+            final Function<Observable<B>, Observable<C>> two,
+            final Function<Observable<C>, Observable<R>> three) throws Exception {
+        return zero.call()
+                .compose(one)
+                .compose(two)
+                .compose(three);
+    }
+
+    /**
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, B, C, D, R> Observable<R> doCo(
+            final Callable<Observable<A>> zero,
+            final Function<Observable<A>, Observable<B>> one,
+            final Function<Observable<B>, Observable<C>> two,
+            final Function<Observable<C>, Observable<D>> three,
+            final Function<Observable<D>, Observable<R>> four) throws Exception {
+        return zero.call()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four);
+    }
+
+    /**
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, B, C, D, E, R> Observable<R> doCo(
+            final Callable<Observable<A>> zero,
+            final Function<Observable<A>, Observable<B>> one,
+            final Function<Observable<B>, Observable<C>> two,
+            final Function<Observable<C>, Observable<D>> three,
+            final Function<Observable<D>, Observable<E>> four,
+            final Function<Observable<E>, Observable<R>> five) throws Exception {
+        return zero.call()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four)
+                .compose(five);
+    }
+
+    /**
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, B, C, D, E, F, R> Observable<R> doCo(
+            final Callable<Observable<A>> zero,
+            final Function<Observable<A>, Observable<B>> one,
+            final Function<Observable<B>, Observable<C>> two,
+            final Function<Observable<C>, Observable<D>> three,
+            final Function<Observable<D>, Observable<E>> four,
+            final Function<Observable<E>, Observable<F>> five,
+            final Function<Observable<F>, Observable<R>> six) throws Exception {
+        return zero.call()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four)
+                .compose(five)
+                .compose(six);
+    }
+
+    /**
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, B, C, D, E, F, G, R> Observable<R> doCo(
+            final Callable<Observable<A>> zero,
+            final Function<Observable<A>, Observable<B>> one,
+            final Function<Observable<B>, Observable<C>> two,
+            final Function<Observable<C>, Observable<D>> three,
+            final Function<Observable<D>, Observable<E>> four,
+            final Function<Observable<E>, Observable<F>> five,
+            final Function<Observable<F>, Observable<G>> six,
+            final Function<Observable<G>, Observable<R>> seven) throws Exception {
+        return zero.call()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four)
+                .compose(five)
+                .compose(six)
+                .compose(seven);
+    }
+
+    /**
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, B, C, D, E, F, G, H, R> Observable<R> doCo(
+            final Callable<Observable<A>> zero,
+            final Function<Observable<A>, Observable<B>> one,
+            final Function<Observable<B>, Observable<C>> two,
+            final Function<Observable<C>, Observable<D>> three,
+            final Function<Observable<D>, Observable<E>> four,
+            final Function<Observable<E>, Observable<F>> five,
+            final Function<Observable<F>, Observable<G>> six,
+            final Function<Observable<G>, Observable<H>> seven,
+            final Function<Observable<H>, Observable<R>> eight) throws Exception {
+        return zero.call()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four)
+                .compose(five)
+                .compose(six)
+                .compose(seven)
+                .compose(eight);
+    }
+
+    /**
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     *
+     * @return composed Observable
+     */
+    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doCo(
+            final Callable<Observable<A>> zero,
+            final Function<Observable<A>, Observable<B>> one,
+            final Function<Observable<B>, Observable<C>> two,
+            final Function<Observable<C>, Observable<D>> three,
+            final Function<Observable<D>, Observable<E>> four,
+            final Function<Observable<E>, Observable<F>> five,
+            final Function<Observable<F>, Observable<G>> six,
+            final Function<Observable<G>, Observable<H>> seven,
+            final Function<Observable<H>, Observable<I>> eight,
+            final Function<Observable<I>, Observable<R>> nine) throws Exception {
+        return zero.call()
+                .compose(one)
+                .compose(two)
+                .compose(three)
+                .compose(four)
+                .compose(five)
+                .compose(six)
+                .compose(seven)
+                .compose(eight)
+                .compose(nine);
+    }
 }
