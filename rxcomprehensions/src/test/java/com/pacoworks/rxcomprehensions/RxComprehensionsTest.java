@@ -237,6 +237,53 @@ public class RxComprehensionsTest {
                 Boolean.toString(false), false, Long.class);
     }
 
+    @Test
+    public void oneCo() throws Exception {
+        Assert.assertEquals((RxComprehensions.doCo(zero(0), intIncrementToString()).toBlocking().first()), "1");
+    }
+
+    @Test
+    public void twoCo() throws Exception {
+        Assert.assertEquals((long)RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt()).toBlocking().first(), 1);
+    }
+
+    @Test
+    public void threeCo() throws Exception {
+        Assert.assertEquals((RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first()), "2");
+    }
+
+    @Test
+    public void fourCo() throws Exception {
+        Assert.assertEquals((long)RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first(), 2);
+    }
+
+    @Test
+    public void fiveCo() throws Exception {
+        Assert.assertEquals((RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first()), "3");
+    }
+
+    @Test
+    public void sixCo() throws Exception {
+        Assert.assertEquals((long)RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first(), 3);
+    }
+
+    @Test
+    public void sevenCo() throws Exception {
+        Assert.assertEquals((RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first()), "4");
+    }
+
+    @Test
+    public void eightCo() throws Exception {
+        Assert.assertEquals((long)RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first(), 4);
+    }
+
+    @Test
+    public void nineCo() throws Exception {
+        Assert.assertEquals((RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first()), "5");
+    }
+
+    // region Helpers
+
     private Func0<Observable<Integer>> zero(final int i) {
         return new Func0<Observable<Integer>>() {
             @Override
@@ -332,4 +379,34 @@ public class RxComprehensionsTest {
             }
         };
     }
+
+    private Observable.Transformer<Integer, String> intIncrementToString() {
+        return new Observable.Transformer<Integer, String>() {
+            @Override
+            public Observable<String> call(Observable<Integer> integerObservable) {
+                return integerObservable.map(new Func1<Integer, String>() {
+                    @Override
+                    public String call(Integer integer) {
+                        return Integer.toString(integer + 1);
+                    }
+                });
+            }
+        };
+    }
+
+    private Observable.Transformer<String, Integer> stringToInt() {
+        return new Observable.Transformer<String, Integer>() {
+            @Override
+            public Observable<Integer> call(Observable<String> stringObservable) {
+                return stringObservable.map(new Func1<String, Integer>() {
+                    @Override
+                    public Integer call(String s) {
+                        return Integer.parseInt(s);
+                    }
+                });
+            }
+        };
+    }
+
+    // endregion
 }
