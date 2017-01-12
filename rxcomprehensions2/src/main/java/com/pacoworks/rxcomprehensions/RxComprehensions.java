@@ -19,6 +19,7 @@ package com.pacoworks.rxcomprehensions;
 import java.util.concurrent.Callable;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableTransformer;
 import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Function;
 import io.reactivex.functions.Function3;
@@ -1256,41 +1257,41 @@ public final class RxComprehensions {
 
 
     /**
-     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(ObservableTransformer)}.
      *
      * @return composed Observable
      */
     public static <A, R> Observable<R> doCo(
             final Callable<Observable<A>> zero,
-            final Function<Observable<A>, Observable<R>> one) throws Exception {
+            final ObservableTransformer<A, R> one) throws Exception {
         return zero.call()
                 .compose(one);
     }
 
     /**
-     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(ObservableTransformer)}.
      *
      * @return composed Observable
      */
     public static <A, B, R> Observable<R> doCo(
             final Callable<Observable<A>> zero,
-            final Function<Observable<A>, Observable<B>> one,
-            final Function<Observable<B>, Observable<R>> two) throws Exception {
+            final ObservableTransformer<A, B> one,
+            final ObservableTransformer<B, R> two) throws Exception {
         return zero.call()
                 .compose(one)
                 .compose(two);
     }
 
     /**
-     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(ObservableTransformer)}.
      *
      * @return composed Observable
      */
     public static <A, B, C, R> Observable<R> doCo(
             final Callable<Observable<A>> zero,
-            final Function<Observable<A>, Observable<B>> one,
-            final Function<Observable<B>, Observable<C>> two,
-            final Function<Observable<C>, Observable<R>> three) throws Exception {
+            final ObservableTransformer<A, B> one,
+            final ObservableTransformer<B, C> two,
+            final ObservableTransformer<C, R> three) throws Exception {
         return zero.call()
                 .compose(one)
                 .compose(two)
@@ -1298,16 +1299,16 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(ObservableTransformer)}.
      *
      * @return composed Observable
      */
     public static <A, B, C, D, R> Observable<R> doCo(
             final Callable<Observable<A>> zero,
-            final Function<Observable<A>, Observable<B>> one,
-            final Function<Observable<B>, Observable<C>> two,
-            final Function<Observable<C>, Observable<D>> three,
-            final Function<Observable<D>, Observable<R>> four) throws Exception {
+            final ObservableTransformer<A, B> one,
+            final ObservableTransformer<B, C> two,
+            final ObservableTransformer<C, D> three,
+            final ObservableTransformer<D, R> four) throws Exception {
         return zero.call()
                 .compose(one)
                 .compose(two)
@@ -1316,17 +1317,17 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(ObservableTransformer)}.
      *
      * @return composed Observable
      */
     public static <A, B, C, D, E, R> Observable<R> doCo(
             final Callable<Observable<A>> zero,
-            final Function<Observable<A>, Observable<B>> one,
-            final Function<Observable<B>, Observable<C>> two,
-            final Function<Observable<C>, Observable<D>> three,
-            final Function<Observable<D>, Observable<E>> four,
-            final Function<Observable<E>, Observable<R>> five) throws Exception {
+            final ObservableTransformer<A, B> one,
+            final ObservableTransformer<B, C> two,
+            final ObservableTransformer<C, D> three,
+            final ObservableTransformer<D, E> four,
+            final ObservableTransformer<E, R> five) throws Exception {
         return zero.call()
                 .compose(one)
                 .compose(two)
@@ -1336,18 +1337,18 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(ObservableTransformer)}.
      *
      * @return composed Observable
      */
     public static <A, B, C, D, E, F, R> Observable<R> doCo(
             final Callable<Observable<A>> zero,
-            final Function<Observable<A>, Observable<B>> one,
-            final Function<Observable<B>, Observable<C>> two,
-            final Function<Observable<C>, Observable<D>> three,
-            final Function<Observable<D>, Observable<E>> four,
-            final Function<Observable<E>, Observable<F>> five,
-            final Function<Observable<F>, Observable<R>> six) throws Exception {
+            final ObservableTransformer<A, B> one,
+            final ObservableTransformer<B, C> two,
+            final ObservableTransformer<C, D> three,
+            final ObservableTransformer<D, E> four,
+            final ObservableTransformer<E, F> five,
+            final ObservableTransformer<F, R> six) throws Exception {
         return zero.call()
                 .compose(one)
                 .compose(two)
@@ -1358,19 +1359,19 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(ObservableTransformer)}.
      *
      * @return composed Observable
      */
     public static <A, B, C, D, E, F, G, R> Observable<R> doCo(
             final Callable<Observable<A>> zero,
-            final Function<Observable<A>, Observable<B>> one,
-            final Function<Observable<B>, Observable<C>> two,
-            final Function<Observable<C>, Observable<D>> three,
-            final Function<Observable<D>, Observable<E>> four,
-            final Function<Observable<E>, Observable<F>> five,
-            final Function<Observable<F>, Observable<G>> six,
-            final Function<Observable<G>, Observable<R>> seven) throws Exception {
+            final ObservableTransformer<A, B> one,
+            final ObservableTransformer<B, C> two,
+            final ObservableTransformer<C, D> three,
+            final ObservableTransformer<D, E> four,
+            final ObservableTransformer<E, F> five,
+            final ObservableTransformer<F, G> six,
+            final ObservableTransformer<G, R> seven) throws Exception {
         return zero.call()
                 .compose(one)
                 .compose(two)
@@ -1382,20 +1383,20 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(ObservableTransformer)}.
      *
      * @return composed Observable
      */
     public static <A, B, C, D, E, F, G, H, R> Observable<R> doCo(
             final Callable<Observable<A>> zero,
-            final Function<Observable<A>, Observable<B>> one,
-            final Function<Observable<B>, Observable<C>> two,
-            final Function<Observable<C>, Observable<D>> three,
-            final Function<Observable<D>, Observable<E>> four,
-            final Function<Observable<E>, Observable<F>> five,
-            final Function<Observable<F>, Observable<G>> six,
-            final Function<Observable<G>, Observable<H>> seven,
-            final Function<Observable<H>, Observable<R>> eight) throws Exception {
+            final ObservableTransformer<A, B> one,
+            final ObservableTransformer<B, C> two,
+            final ObservableTransformer<C, D> three,
+            final ObservableTransformer<D, E> four,
+            final ObservableTransformer<E, F> five,
+            final ObservableTransformer<F, G> six,
+            final ObservableTransformer<G, H> seven,
+            final ObservableTransformer<H, R> eight) throws Exception {
         return zero.call()
                 .compose(one)
                 .compose(two)
@@ -1408,21 +1409,21 @@ public final class RxComprehensions {
     }
 
     /**
-     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(Function)}.
+     * Composes an {@link Observable} from multiple {@link Function} chained by {@link Observable#compose(ObservableTransformer)}.
      *
      * @return composed Observable
      */
     public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doCo(
             final Callable<Observable<A>> zero,
-            final Function<Observable<A>, Observable<B>> one,
-            final Function<Observable<B>, Observable<C>> two,
-            final Function<Observable<C>, Observable<D>> three,
-            final Function<Observable<D>, Observable<E>> four,
-            final Function<Observable<E>, Observable<F>> five,
-            final Function<Observable<F>, Observable<G>> six,
-            final Function<Observable<G>, Observable<H>> seven,
-            final Function<Observable<H>, Observable<I>> eight,
-            final Function<Observable<I>, Observable<R>> nine) throws Exception {
+            final ObservableTransformer<A, B> one,
+            final ObservableTransformer<B, C> two,
+            final ObservableTransformer<C, D> three,
+            final ObservableTransformer<D, E> four,
+            final ObservableTransformer<E, F> five,
+            final ObservableTransformer<F, G> six,
+            final ObservableTransformer<G, H> seven,
+            final ObservableTransformer<H, I> eight,
+            final ObservableTransformer<I, R> nine) throws Exception {
         return zero.call()
                 .compose(one)
                 .compose(two)

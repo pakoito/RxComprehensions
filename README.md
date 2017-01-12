@@ -45,7 +45,7 @@ Observable<String> getUserFriends =
 
 ### Compose comprehensions
 
-RxComprehensions contains static methods `doCo()` for `compose()`. Each takes from 1 to 9 `Transformer<T, U>` (RxJava 1.X) or `Function<Observable<T>, Observable<U>` (RxJava 2.X), and returns an `Observable` of the type of the return of the last one.
+RxComprehensions contains static methods `doCo()` for `compose()`. Each takes from 1 to 9 `Transformer<T, U>` (RxJava 1.X) or `ObservableTransformer<T, U>` (RxJava 2.X), and returns an `Observable` of the type of the return of the last one.
 
 ```java
 Observable<List<Siblings>> getRelatives =
@@ -61,15 +61,15 @@ Observable<List<Siblings>> getRelatives =
 
 Observable<RelativeDto> requestRelative(String id) { /* ... */ }
 
-Transformer<RelativeDto, RelativeDto> validate() { /* ... */ }
+ObservableTransformer<RelativeDto, RelativeDto> validate() { /* ... */ }
 
-Transformer<RelativeDto, RelativeDto> assureThreads(Scheduler in, Scheduler out) { /* ... */ }
+ObservableTransformer<RelativeDto, RelativeDto> assureThreads(Scheduler in, Scheduler out) { /* ... */ }
 
-Transformer<RelativeDto, RelativeDto> respectLifecycle(Activity activity) { /* ... */ }
+ObservableTransformer<RelativeDto, RelativeDto> respectLifecycle(Activity activity) { /* ... */ }
 
-Transformer<RelativeDto, Relative> toUILayerModel() { /* ... */ }
+ObservableTransformer<RelativeDto, Relative> toUILayerModel() { /* ... */ }
 
-Transformer<Relative, List<Siblings>> groupSiblings() { /* ... */ }
+ObservableTransformer<Relative, List<Siblings>> groupSiblings() { /* ... */ }
 ```
 
 ## Distribution

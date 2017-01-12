@@ -22,6 +22,8 @@ import org.junit.Test;
 import java.util.concurrent.Callable;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
+import io.reactivex.ObservableTransformer;
 import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Function;
 import io.reactivex.functions.Function3;
@@ -322,11 +324,11 @@ public class RxComprehensionsTest {
         };
     }
 
-    private Function<Observable<Integer>, Observable<String>> intIncrementToString() {
-        return new Function<Observable<Integer>, Observable<String>>() {
+    private ObservableTransformer<Integer, String> intIncrementToString() {
+        return new ObservableTransformer<Integer, String>() {
             @Override
-            public Observable<String> apply(Observable<Integer> integerObservable) throws Exception {
-                return integerObservable.map(new Function<Integer, String>() {
+            public ObservableSource<String> apply(Observable<Integer> upstream) {
+                return upstream.map(new Function<Integer, String>() {
                     @Override
                     public String apply(Integer integer) throws Exception {
                         return Integer.toString(integer + 1);
@@ -336,11 +338,11 @@ public class RxComprehensionsTest {
         };
     }
 
-    private Function<Observable<String>, Observable<Integer>> stringToInt() {
-        return new Function<Observable<String>, Observable<Integer>>() {
+    private ObservableTransformer<String, Integer> stringToInt() {
+        return new ObservableTransformer<String, Integer>() {
             @Override
-            public Observable<Integer> apply(Observable<String> stringObservable) throws Exception {
-                return stringObservable.map(new Function<String, Integer>() {
+            public ObservableSource<Integer> apply(Observable<String> upstream) {
+                return upstream.map(new Function<String, Integer>() {
                     @Override
                     public Integer apply(String s) throws Exception {
                         return Integer.parseInt(s);
