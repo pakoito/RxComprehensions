@@ -53,8 +53,8 @@ Observable<List<Siblings>> getRelatives =
     RxComprehensions.doCo(
         () -> requestRelative("12345"),
         validate(),
-        assureThreads(),
-        respectLifecycle(),
+        assureThreads(Schedulers.io(), AndroidSchedulers.main()),
+        respectLifecycle(activity),
         toUILayerModel(),
         groupSiblings(),
     );
@@ -63,13 +63,13 @@ Observable<RelativeDto> requestRelative(String id) { /* ... */ }
 
 Transformer<RelativeDto, RelativeDto> validate() { /* ... */ }
 
-Transformer<RelativeDto, RelativeDto> assureThreads() { /* ... */ }
+Transformer<RelativeDto, RelativeDto> assureThreads(Scheduler in, Scheduler out) { /* ... */ }
 
-Transformer<RelativeDto, RelativeDto> respectLifecycle() { /* ... */ }
+Transformer<RelativeDto, RelativeDto> respectLifecycle(Activity activity) { /* ... */ }
 
 Transformer<RelativeDto, Relative> toUILayerModel() { /* ... */ }
 
-Transformer<Relative, List<Siblings>> toUILayerModel() { /* ... */ }
+Transformer<Relative, List<Siblings>> groupSiblings() { /* ... */ }
 ```
 
 ##Distribution
