@@ -2,7 +2,7 @@
 
 RxComprehensions is a library to reduce boilerplate and simplify your `Observable` chains.
 
-# Rationale
+## Rationale
 
 As your code starts getting more and more functional, you find that you have to chain multiple `Observable` by means of `flatMap()`, `concatMap()`, or `switchMap()`. This causes indentation levels to go quite high, and would often require that you split the code in several methods just to keep it readable.
 
@@ -25,9 +25,9 @@ Observable<String> getUserFriends =
 
 **Comprehensions** are a language feature that allow you to define such a chain in a way where every observable is a function at topmost indentation, yet still contains all the parameters received in the previous functions.
 
-# Usage
+## Usage
 
-## Map comprehensions
+### Map comprehensions
 
 RxComprehensions contains static methods `doFM()` for `flatMap()`, `doCM()` for `concatMap()`, `doSM()` for `switchMap()`. Each takes from 1 to 9 `FuncN` each with an increasing number of parameters, and returns an `Observable` of the type of the return of the last function.
 
@@ -43,7 +43,7 @@ Observable<String> getUserFriends =
     );
 ```
 
-## Compose comprehensions
+### Compose comprehensions
 
 RxComprehensions contains static methods `doCo()` for `compose()`. Each takes from 1 to 9 `Transformer<T, U>` (RxJava 1.X) or `Function<Observable<T>, Observable<U>` (RxJava 2.X), and returns an `Observable` of the type of the return of the last one.
 
@@ -72,9 +72,9 @@ Transformer<RelativeDto, Relative> toUILayerModel() { /* ... */ }
 Transformer<Relative, List<Siblings>> groupSiblings() { /* ... */ }
 ```
 
-##Distribution
+## Distribution
 
-###RxJava 1.X
+### RxJava 1.X
 
 Add as a dependency to your `build.gradle`
 ```groovy
@@ -107,7 +107,7 @@ or to your `pom.xml`
 </dependency>
 ```
 
-###RxJava 2.X
+### RxJava 2.X
 
 Add as a dependency to your `build.gradle`
 ```groovy
@@ -140,7 +140,7 @@ or to your `pom.xml`
 </dependency>
 ```
 
-##License
+## License
 
 Copyright (c) pakoito 2016
 
