@@ -27,7 +27,9 @@ Observable<String> getUserFriends =
 
 # Usage
 
-RxComprehensions contains static methods `doFM()` for `flatMap()`, `doCM()` for `concatMap()`, and `doSM()` for `switchMap()`. Each takes from 2 to 9 `FuncN` each with an increasing number of parameters, and returns an `Observable` of the type of the return of the last function.
+## Map comprehensions
+
+RxComprehensions contains static methods `doFM()` for `flatMap()`, `doCM()` for `concatMap()`, `doSM()` for `switchMap()`. Each takes from 1 to 9 `FuncN` each with an increasing number of parameters, and returns an `Observable` of the type of the return of the last function.
 
 ```java
 Observable<String> getUserFriends =
@@ -39,6 +41,33 @@ Observable<String> getUserFriends =
         position, user, friends -> storeUserAndFriends(user, friends),
         position, user, friends, result -> toUserDisplayString(position, user, friends, result)
     );
+```
+
+## Compose comprehensions
+
+RxComprehensions contains static methods `doCo()` for `compose()`. Each takes from 1 to 9 `Transformer<T, U>` (RxJava 1.X) or `Function<Observable<T>, Observable<U>` (RxJava 2.X), and returns an `Observable` of the type of the return of the last one.
+
+```java
+Observable<List<Siblings>> getRelatives =
+    // chained with compose()
+    RxComprehensions.doCo(
+        () -> requestRelative("id"),
+        validate(),
+        assureThreads(),
+        respectLifecycle(),
+        toUILayerModel(),
+        groupSiblings(),
+    );
+
+Transformer<RelativeDto, RelativeDto> validate() { /* ... */ }
+
+Transformer<RelativeDto, RelativeDto> assureThreads() { /* ... */ }
+
+Transformer<RelativeDto, RelativeDto> respectLifecycle() { /* ... */ }
+
+Transformer<RelativeDto, Relative> toUILayerModel() { /* ... */ }
+
+Transformer<Relative, List<Siblings>> toUILayerModel() { /* ... */ }
 ```
 
 ##Distribution
@@ -55,7 +84,7 @@ repositories {
     
 dependencies {
     ...
-    compile 'com.github.pakoito.RxComprehensions:rxcomprehensions:1.0.0'
+    compile 'com.github.pakoito.RxComprehensions:rxcomprehensions:1.1.0'
     ...
 }
 ```
@@ -72,7 +101,7 @@ or to your `pom.xml`
 <dependency>
     <groupId>com.github.pakoito.RxComprehensions</groupId>
     <artifactId>rxcomprehensions</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
@@ -88,7 +117,7 @@ repositories {
     
 dependencies {
     ...
-    compile 'com.github.pakoito.RxComprehensions:rxcomprehensions2:1.0.0'
+    compile 'com.github.pakoito.RxComprehensions:rxcomprehensions2:1.1.0'
     ...
 }
 ```
@@ -105,7 +134,7 @@ or to your `pom.xml`
 <dependency>
     <groupId>com.github.pakoito.RxComprehensions</groupId>
     <artifactId>rxcomprehensions2</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
