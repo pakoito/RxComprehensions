@@ -38,47 +38,47 @@ import io.reactivex.observers.TestObserver;
 public class RxComprehensionsTest {
 
     @Test
-    public void oneFM() throws Exception {
+    public void oneFM() {
         Assert.assertEquals(RxComprehensions.doFM(zero(1), one(true)).blockingFirst(), true);
     }
 
     @Test
-    public void twoFM() throws Exception {
+    public void twoFM() {
         Assert.assertEquals(RxComprehensions.doFM(zero(2), one(true), two("result")).blockingFirst(), "result");
     }
 
     @Test
-    public void threeFM() throws Exception {
+    public void threeFM() {
         Assert.assertEquals(RxComprehensions.doFM(zero(3), one(true), two("result"), three("other")).blockingFirst(), "other");
     }
 
     @Test
-    public void fourFM() throws Exception {
+    public void fourFM() {
         Assert.assertEquals(RxComprehensions.doFM(zero(4), one(true), two("result"), three("other"), four("other".length())).blockingFirst(), new Long("other".length()));
     }
 
     @Test
-    public void fiveFM() throws Exception {
+    public void fiveFM() {
         Assert.assertEquals(RxComprehensions.doFM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5)).blockingFirst(), false);
     }
 
     @Test
-    public void sixFM() throws Exception {
+    public void sixFM() {
         Assert.assertEquals(RxComprehensions.doFM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false))).blockingFirst(), "false");
     }
 
     @Test
-    public void sevenFM() throws Exception {
+    public void sevenFM() {
         Assert.assertEquals(RxComprehensions.doFM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false)), seven("true")).blockingFirst(), false);
     }
 
     @Test
-    public void eightFM() throws Exception {
+    public void eightFM() {
         Assert.assertEquals(RxComprehensions.doFM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class)).blockingFirst(), Long.class);
     }
 
     @Test
-    public void nineFM() throws Exception {
+    public void nineFM() {
         final TestObserver<Object> observer = TestObserver.create();
         RxComprehensions.doFM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class), this.<Long>nine()).subscribe(observer);
         observer.awaitTerminalEvent();
@@ -88,47 +88,47 @@ public class RxComprehensionsTest {
     }
 
     @Test
-    public void oneCM() throws Exception {
+    public void oneCM() {
         Assert.assertEquals(RxComprehensions.doCM(zero(1), one(true)).blockingFirst(), true);
     }
 
     @Test
-    public void twoCM() throws Exception {
+    public void twoCM() {
         Assert.assertEquals(RxComprehensions.doCM(zero(2), one(true), two("result")).blockingFirst(), "result");
     }
 
     @Test
-    public void threeCM() throws Exception {
+    public void threeCM() {
         Assert.assertEquals(RxComprehensions.doCM(zero(3), one(true), two("result"), three("other")).blockingFirst(), "other");
     }
 
     @Test
-    public void fourCM() throws Exception {
+    public void fourCM() {
         Assert.assertEquals(RxComprehensions.doCM(zero(4), one(true), two("result"), three("other"), four("other".length())).blockingFirst(), new Long("other".length()));
     }
 
     @Test
-    public void fiveCM() throws Exception {
+    public void fiveCM() {
         Assert.assertEquals(RxComprehensions.doCM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5)).blockingFirst(), false);
     }
 
     @Test
-    public void sixCM() throws Exception {
+    public void sixCM() {
         Assert.assertEquals(RxComprehensions.doCM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false))).blockingFirst(), "false");
     }
 
     @Test
-    public void sevenCM() throws Exception {
+    public void sevenCM() {
         Assert.assertEquals(RxComprehensions.doCM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false)), seven("true")).blockingFirst(), false);
     }
 
     @Test
-    public void eightCM() throws Exception {
+    public void eightCM() {
         Assert.assertEquals(RxComprehensions.doCM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class)).blockingFirst(), Long.class);
     }
 
     @Test
-    public void nineCM() throws Exception {
+    public void nineCM() {
         final TestObserver<Object> observer = TestObserver.create();
         RxComprehensions.doCM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class), this.<Long>nine()).subscribe(observer);
         observer.awaitTerminalEvent();
@@ -138,47 +138,47 @@ public class RxComprehensionsTest {
     }
 
     @Test
-    public void oneSM() throws Exception {
+    public void oneSM() {
         Assert.assertEquals(RxComprehensions.doSM(zero(1), one(true)).blockingFirst(), true);
     }
 
     @Test
-    public void twoSM() throws Exception {
+    public void twoSM() {
         Assert.assertEquals(RxComprehensions.doSM(zero(2), one(true), two("result")).blockingFirst(), "result");
     }
 
     @Test
-    public void threeSM() throws Exception {
+    public void threeSM() {
         Assert.assertEquals(RxComprehensions.doSM(zero(3), one(true), two("result"), three("other")).blockingFirst(), "other");
     }
 
     @Test
-    public void fourSM() throws Exception {
+    public void fourSM() {
         Assert.assertEquals(RxComprehensions.doSM(zero(4), one(true), two("result"), three("other"), four("other".length())).blockingFirst(), new Long("other".length()));
     }
 
     @Test
-    public void fiveSM() throws Exception {
+    public void fiveSM() {
         Assert.assertEquals(RxComprehensions.doSM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5)).blockingFirst(), false);
     }
 
     @Test
-    public void sixSM() throws Exception {
+    public void sixSM() {
         Assert.assertEquals(RxComprehensions.doSM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false))).blockingFirst(), "false");
     }
 
     @Test
-    public void sevenSM() throws Exception {
+    public void sevenSM() {
         Assert.assertEquals(RxComprehensions.doSM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false)), seven("true")).blockingFirst(), false);
     }
 
     @Test
-    public void eightSM() throws Exception {
+    public void eightSM() {
         Assert.assertEquals(RxComprehensions.doSM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class)).blockingFirst(), Long.class);
     }
 
     @Test
-    public void nineSM() throws Exception {
+    public void nineSM() {
         final TestObserver<Object> observer = TestObserver.create();
         RxComprehensions.doSM(zero(1), one(true), two("result"), three("other"), four("other".length()), five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class), this.<Long>nine()).subscribe(observer);
         observer.awaitTerminalEvent();
@@ -188,47 +188,47 @@ public class RxComprehensionsTest {
     }
 
     @Test
-    public void oneCo() throws Exception {
+    public void oneCo() {
         Assert.assertEquals((RxComprehensions.doCo(zero(0), intIncrementToString()).blockingFirst()), "1");
     }
 
     @Test
-    public void twoCo() throws Exception {
+    public void twoCo() {
         Assert.assertEquals((long)RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt()).blockingFirst(), 1);
     }
 
     @Test
-    public void threeCo() throws Exception {
+    public void threeCo() {
         Assert.assertEquals((RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString()).blockingFirst()), "2");
     }
 
     @Test
-    public void fourCo() throws Exception {
+    public void fourCo() {
         Assert.assertEquals((long)RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).blockingFirst(), 2);
     }
 
     @Test
-    public void fiveCo() throws Exception {
+    public void fiveCo() {
         Assert.assertEquals((RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).blockingFirst()), "3");
     }
 
     @Test
-    public void sixCo() throws Exception {
+    public void sixCo() {
         Assert.assertEquals((long)RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).blockingFirst(), 3);
     }
 
     @Test
-    public void sevenCo() throws Exception {
+    public void sevenCo() {
         Assert.assertEquals((RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).blockingFirst()), "4");
     }
 
     @Test
-    public void eightCo() throws Exception {
+    public void eightCo() {
         Assert.assertEquals((long)RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).blockingFirst(), 4);
     }
 
     @Test
-    public void nineCo() throws Exception {
+    public void nineCo() {
         Assert.assertEquals((RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).blockingFirst()), "5");
     }
 
@@ -237,7 +237,7 @@ public class RxComprehensionsTest {
     private Callable<Observable<Integer>> zero(final int i) {
         return new Callable<Observable<Integer>>() {
             @Override
-            public Observable<Integer> call() throws Exception {
+            public Observable<Integer> call() {
                 return Observable.just(i);
             }
         };
@@ -246,7 +246,7 @@ public class RxComprehensionsTest {
     private Function<Integer, Observable<Boolean>> one(final boolean value) {
         return new Function<Integer, Observable<Boolean>>() {
             @Override
-            public Observable<Boolean> apply(Integer integer) throws Exception {
+            public Observable<Boolean> apply(Integer integer) {
                 return Observable.just(value);
             }
         };
@@ -255,7 +255,7 @@ public class RxComprehensionsTest {
     private BiFunction<Integer, Boolean, Observable<String>> two(final String value) {
         return new BiFunction<Integer, Boolean, Observable<String>>() {
             @Override
-            public Observable<String> apply(Integer integer, Boolean aBoolean) throws Exception {
+            public Observable<String> apply(Integer integer, Boolean aBoolean) {
                 return Observable.just(value);
             }
         };
@@ -264,7 +264,7 @@ public class RxComprehensionsTest {
     private Function3<Integer, Boolean, String, Observable<String>> three(final String other) {
         return new Function3<Integer, Boolean, String, Observable<String>>() {
             @Override
-            public Observable<String> apply(Integer integer, Boolean aBoolean, String s) throws Exception {
+            public Observable<String> apply(Integer integer, Boolean aBoolean, String s) {
                 return Observable.just(other);
             }
         };
@@ -273,7 +273,7 @@ public class RxComprehensionsTest {
     private Function4<Integer, Boolean, String, String, Observable<Long>> four(final long length) {
         return new Function4<Integer, Boolean, String, String, Observable<Long>>() {
             @Override
-            public Observable<Long> apply(Integer integer, Boolean aBoolean, String s, String s2) throws Exception {
+            public Observable<Long> apply(Integer integer, Boolean aBoolean, String s, String s2) {
                 return Observable.just(length);
             }
         };
@@ -282,7 +282,7 @@ public class RxComprehensionsTest {
     private Function5<Integer, Boolean, String, String, Long, Observable<Boolean>> five(final boolean b) {
         return new Function5<Integer, Boolean, String, String, Long, Observable<Boolean>>() {
             @Override
-            public Observable<Boolean> apply(Integer integer, Boolean aBoolean, String s, String s2, Long aLong) throws Exception {
+            public Observable<Boolean> apply(Integer integer, Boolean aBoolean, String s, String s2, Long aLong) {
                 return Observable.just(b);
             }
         };
@@ -291,7 +291,7 @@ public class RxComprehensionsTest {
     private Function6<Integer, Boolean, String, String, Long, Boolean, Observable<String>> six(final String string) {
         return new Function6<Integer, Boolean, String, String, Long, Boolean, Observable<String>>() {
             @Override
-            public Observable<String> apply(Integer integer, Boolean aBoolean, String s, String s2, Long aLong, Boolean aBoolean2) throws Exception {
+            public Observable<String> apply(Integer integer, Boolean aBoolean, String s, String s2, Long aLong, Boolean aBoolean2) {
                 return Observable.just(string);
             }
         };
@@ -300,7 +300,7 @@ public class RxComprehensionsTest {
     private Function7<Integer, Boolean, String, String, Long, Boolean, String, Observable<Boolean>> seven(final String parameter) {
         return new Function7<Integer, Boolean, String, String, Long, Boolean, String, Observable<Boolean>>() {
             @Override
-            public Observable<Boolean> apply(Integer integer, Boolean aBoolean, String s, String s2, Long aLong, Boolean aBoolean2, String s3) throws Exception {
+            public Observable<Boolean> apply(Integer integer, Boolean aBoolean, String s, String s2, Long aLong, Boolean aBoolean2, String s3) {
                 return Observable.just(!Boolean.valueOf(parameter));
             }
         };
@@ -309,7 +309,7 @@ public class RxComprehensionsTest {
     private <T> Function8<Integer, Boolean, String, String, Long, Boolean, String, Boolean, Observable<Class<T>>> eight(final Class<T> item) {
         return new Function8<Integer, Boolean, String, String, Long, Boolean, String, Boolean, Observable<Class<T>>>() {
             @Override
-            public Observable<Class<T>> apply(Integer integer, Boolean aBoolean, String s, String s2, Long aLong, Boolean aBoolean2, String s3, Boolean aBoolean3) throws Exception {
+            public Observable<Class<T>> apply(Integer integer, Boolean aBoolean, String s, String s2, Long aLong, Boolean aBoolean2, String s3, Boolean aBoolean3) {
                 return Observable.just(item);
             }
         };
@@ -318,7 +318,7 @@ public class RxComprehensionsTest {
     private <T> Function9<Integer, Boolean, String, String, Long, Boolean, String, Boolean, Class<T>, Observable<Object>> nine() {
         return new Function9<Integer, Boolean, String, String, Long, Boolean, String, Boolean, Class<T>, Observable<Object>>() {
             @Override
-            public Observable<Object> apply(Integer integer, Boolean aBoolean, String s, String s2, Long aLong, Boolean aBoolean2, String s3, Boolean aBoolean3, Class<T> clazz) throws Exception {
+            public Observable<Object> apply(Integer integer, Boolean aBoolean, String s, String s2, Long aLong, Boolean aBoolean2, String s3, Boolean aBoolean3, Class<T> clazz) {
                 return Observable.<Object>just(integer, aBoolean, s, s2, aLong, aBoolean2, s3, aBoolean3, clazz);
             }
         };
@@ -330,7 +330,7 @@ public class RxComprehensionsTest {
             public ObservableSource<String> apply(Observable<Integer> upstream) {
                 return upstream.map(new Function<Integer, String>() {
                     @Override
-                    public String apply(Integer integer) throws Exception {
+                    public String apply(Integer integer) {
                         return Integer.toString(integer + 1);
                     }
                 });
@@ -344,7 +344,7 @@ public class RxComprehensionsTest {
             public ObservableSource<Integer> apply(Observable<String> upstream) {
                 return upstream.map(new Function<String, Integer>() {
                     @Override
-                    public Integer apply(String s) throws Exception {
+                    public Integer apply(String s) {
                         return Integer.parseInt(s);
                     }
                 });
