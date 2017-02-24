@@ -45,7 +45,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, R> Observable<R> doFM(
+    public static <A, R> Observable<R> doFlatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<R>> one) {
         try {
@@ -66,7 +66,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, R> Observable<R> doFM(
+    public static <A, B, R> Observable<R> doFlatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<R>> two) {
@@ -94,7 +94,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, R> Observable<R> doFM(
+    public static <A, B, C, R> Observable<R> doFlatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -129,7 +129,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, R> Observable<R> doFM(
+    public static <A, B, C, D, R> Observable<R> doFlatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -171,7 +171,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, R> Observable<R> doFM(
+    public static <A, B, C, D, E, R> Observable<R> doFlatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -220,7 +220,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, R> Observable<R> doFM(
+    public static <A, B, C, D, E, F, R> Observable<R> doFlatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -276,7 +276,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, R> Observable<R> doFM(
+    public static <A, B, C, D, E, F, G, R> Observable<R> doFlatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -339,7 +339,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, R> Observable<R> doFM(
+    public static <A, B, C, D, E, F, G, H, R> Observable<R> doFlatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -409,7 +409,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doFM(
+    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doFlatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -486,7 +486,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, R> Observable<R> doCM(
+    public static <A, R> Observable<R> doConcatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<R>> one) {
         try {
@@ -507,7 +507,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, R> Observable<R> doCM(
+    public static <A, B, R> Observable<R> doConcatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<R>> two) {
@@ -535,7 +535,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, R> Observable<R> doCM(
+    public static <A, B, C, R> Observable<R> doConcatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -570,7 +570,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, R> Observable<R> doCM(
+    public static <A, B, C, D, R> Observable<R> doConcatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -612,7 +612,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, R> Observable<R> doCM(
+    public static <A, B, C, D, E, R> Observable<R> doConcatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -661,7 +661,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, R> Observable<R> doCM(
+    public static <A, B, C, D, E, F, R> Observable<R> doConcatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -717,7 +717,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, R> Observable<R> doCM(
+    public static <A, B, C, D, E, F, G, R> Observable<R> doConcatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -780,7 +780,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, R> Observable<R> doCM(
+    public static <A, B, C, D, E, F, G, H, R> Observable<R> doConcatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -850,7 +850,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doCM(
+    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doConcatMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -927,7 +927,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, R> Observable<R> doSM(
+    public static <A, R> Observable<R> doSwitchMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<R>> one) {
         try {
@@ -948,7 +948,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, R> Observable<R> doSM(
+    public static <A, B, R> Observable<R> doSwitchMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<R>> two) {
@@ -976,7 +976,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, R> Observable<R> doSM(
+    public static <A, B, C, R> Observable<R> doSwitchMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -1011,7 +1011,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, R> Observable<R> doSM(
+    public static <A, B, C, D, R> Observable<R> doSwitchMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -1053,7 +1053,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, R> Observable<R> doSM(
+    public static <A, B, C, D, E, R> Observable<R> doSwitchMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -1102,7 +1102,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, R> Observable<R> doSM(
+    public static <A, B, C, D, E, F, R> Observable<R> doSwitchMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -1158,7 +1158,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, R> Observable<R> doSM(
+    public static <A, B, C, D, E, F, G, R> Observable<R> doSwitchMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -1221,7 +1221,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, R> Observable<R> doSM(
+    public static <A, B, C, D, E, F, G, H, R> Observable<R> doSwitchMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -1291,7 +1291,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doSM(
+    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doSwitchMap(
             final Callable<Observable<A>> zero,
             final Function<A, Observable<B>> one,
             final BiFunction<A, B, Observable<C>> two,
@@ -1369,7 +1369,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, R> Observable<R> doCo(
+    public static <A, R> Observable<R> doCompose(
             final Callable<Observable<A>> zero,
             final ObservableTransformer<A, R> one) {
         try {
@@ -1385,7 +1385,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, R> Observable<R> doCo(
+    public static <A, B, R> Observable<R> doCompose(
             final Callable<Observable<A>> zero,
             final ObservableTransformer<A, B> one,
             final ObservableTransformer<B, R> two) {
@@ -1403,7 +1403,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, R> Observable<R> doCo(
+    public static <A, B, C, R> Observable<R> doCompose(
             final Callable<Observable<A>> zero,
             final ObservableTransformer<A, B> one,
             final ObservableTransformer<B, C> two,
@@ -1423,7 +1423,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, R> Observable<R> doCo(
+    public static <A, B, C, D, R> Observable<R> doCompose(
             final Callable<Observable<A>> zero,
             final ObservableTransformer<A, B> one,
             final ObservableTransformer<B, C> two,
@@ -1445,7 +1445,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, R> Observable<R> doCo(
+    public static <A, B, C, D, E, R> Observable<R> doCompose(
             final Callable<Observable<A>> zero,
             final ObservableTransformer<A, B> one,
             final ObservableTransformer<B, C> two,
@@ -1469,7 +1469,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, R> Observable<R> doCo(
+    public static <A, B, C, D, E, F, R> Observable<R> doCompose(
             final Callable<Observable<A>> zero,
             final ObservableTransformer<A, B> one,
             final ObservableTransformer<B, C> two,
@@ -1495,7 +1495,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, R> Observable<R> doCo(
+    public static <A, B, C, D, E, F, G, R> Observable<R> doCompose(
             final Callable<Observable<A>> zero,
             final ObservableTransformer<A, B> one,
             final ObservableTransformer<B, C> two,
@@ -1523,7 +1523,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, R> Observable<R> doCo(
+    public static <A, B, C, D, E, F, G, H, R> Observable<R> doCompose(
             final Callable<Observable<A>> zero,
             final ObservableTransformer<A, B> one,
             final ObservableTransformer<B, C> two,
@@ -1553,7 +1553,7 @@ public final class RxComprehensions {
      *
      * @return composed Observable
      */
-    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doCo(
+    public static <A, B, C, D, E, F, G, H, I, R> Observable<R> doCompose(
             final Callable<Observable<A>> zero,
             final ObservableTransformer<A, B> one,
             final ObservableTransformer<B, C> two,

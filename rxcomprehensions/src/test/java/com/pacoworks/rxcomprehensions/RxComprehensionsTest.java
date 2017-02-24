@@ -35,37 +35,37 @@ import rx.observers.TestSubscriber;
 public class RxComprehensionsTest {
     @Test
     public void oneFM() {
-        Assert.assertEquals(RxComprehensions.doFM(zero(1), one(true)).toBlocking().first(), true);
+        Assert.assertEquals(RxComprehensions.doFlatMap(zero(1), one(true)).toBlocking().first(), true);
     }
 
     @Test
     public void twoFM() {
-        Assert.assertEquals(RxComprehensions.doFM(zero(2), one(true), two("result")).toBlocking().first(), "result");
+        Assert.assertEquals(RxComprehensions.doFlatMap(zero(2), one(true), two("result")).toBlocking().first(), "result");
     }
 
     @Test
     public void threeFM() {
         Assert.assertEquals(
-                RxComprehensions.doFM(zero(3), one(true), two("result"), three("other")).toBlocking().first(),
+                RxComprehensions.doFlatMap(zero(3), one(true), two("result"), three("other")).toBlocking().first(),
                 "other");
     }
 
     @Test
     public void fourFM() {
         Assert.assertEquals(RxComprehensions
-                        .doFM(zero(4), one(true), two("result"), three("other"), four("other".length())).toBlocking().first(),
+                        .doFlatMap(zero(4), one(true), two("result"), three("other"), four("other".length())).toBlocking().first(),
                 new Long("other".length()));
     }
 
     @Test
     public void fiveFM() {
-        Assert.assertEquals(RxComprehensions.doFM(zero(1), one(true), two("result"), three("other"),
+        Assert.assertEquals(RxComprehensions.doFlatMap(zero(1), one(true), two("result"), three("other"),
                 four("other".length()), five("other".length() < 5)).toBlocking().first(), false);
     }
 
     @Test
     public void sixFM() {
-        Assert.assertEquals(RxComprehensions.doFM(zero(1), one(true), two("result"), three("other"),
+        Assert.assertEquals(RxComprehensions.doFlatMap(zero(1), one(true), two("result"), three("other"),
                 four("other".length()), five("other".length() < 5), six(Boolean.toString(false))).toBlocking().first(),
                 "false");
     }
@@ -74,7 +74,7 @@ public class RxComprehensionsTest {
     public void sevenFM() {
         Assert.assertEquals(
                 RxComprehensions
-                        .doFM(zero(1), one(true), two("result"), three("other"), four("other".length()),
+                        .doFlatMap(zero(1), one(true), two("result"), three("other"), four("other".length()),
                                 five("other".length() < 5), six(Boolean.toString(false)), seven("true"))
                         .toBlocking().first(),
                 false);
@@ -83,7 +83,7 @@ public class RxComprehensionsTest {
     @Test
     public void eightFM() {
         Assert.assertEquals(RxComprehensions
-                .doFM(zero(1), one(true), two("result"), three("other"), four("other".length()),
+                .doFlatMap(zero(1), one(true), two("result"), three("other"), four("other".length()),
                         five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class))
                 .toBlocking().first(), Long.class);
     }
@@ -91,7 +91,7 @@ public class RxComprehensionsTest {
     @Test
     public void nineFM() {
         final TestSubscriber<Object> observer = TestSubscriber.create();
-        RxComprehensions.doFM(zero(1), one(true), two("result"), three("other"), four("other".length()),
+        RxComprehensions.doFlatMap(zero(1), one(true), two("result"), three("other"), four("other".length()),
                 five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class),
                 this.<Long>nine()).subscribe(observer);
         observer.awaitTerminalEvent();
@@ -103,37 +103,37 @@ public class RxComprehensionsTest {
 
     @Test
     public void oneCM() {
-        Assert.assertEquals(RxComprehensions.doCM(zero(1), one(true)).toBlocking().first(), true);
+        Assert.assertEquals(RxComprehensions.doConcatMap(zero(1), one(true)).toBlocking().first(), true);
     }
 
     @Test
     public void twoCM() {
-        Assert.assertEquals(RxComprehensions.doCM(zero(2), one(true), two("result")).toBlocking().first(), "result");
+        Assert.assertEquals(RxComprehensions.doConcatMap(zero(2), one(true), two("result")).toBlocking().first(), "result");
     }
 
     @Test
     public void threeCM() {
         Assert.assertEquals(
-                RxComprehensions.doCM(zero(3), one(true), two("result"), three("other")).toBlocking().first(),
+                RxComprehensions.doConcatMap(zero(3), one(true), two("result"), three("other")).toBlocking().first(),
                 "other");
     }
 
     @Test
     public void fourCM() {
         Assert.assertEquals(RxComprehensions
-                        .doCM(zero(4), one(true), two("result"), three("other"), four("other".length())).toBlocking().first(),
+                        .doConcatMap(zero(4), one(true), two("result"), three("other"), four("other".length())).toBlocking().first(),
                 new Long("other".length()));
     }
 
     @Test
     public void fiveCM() {
-        Assert.assertEquals(RxComprehensions.doCM(zero(1), one(true), two("result"), three("other"),
+        Assert.assertEquals(RxComprehensions.doConcatMap(zero(1), one(true), two("result"), three("other"),
                 four("other".length()), five("other".length() < 5)).toBlocking().first(), false);
     }
 
     @Test
     public void sixCM() {
-        Assert.assertEquals(RxComprehensions.doCM(zero(1), one(true), two("result"), three("other"),
+        Assert.assertEquals(RxComprehensions.doConcatMap(zero(1), one(true), two("result"), three("other"),
                 four("other".length()), five("other".length() < 5), six(Boolean.toString(false))).toBlocking().first(),
                 "false");
     }
@@ -142,7 +142,7 @@ public class RxComprehensionsTest {
     public void sevenCM() {
         Assert.assertEquals(
                 RxComprehensions
-                        .doCM(zero(1), one(true), two("result"), three("other"), four("other".length()),
+                        .doConcatMap(zero(1), one(true), two("result"), three("other"), four("other".length()),
                                 five("other".length() < 5), six(Boolean.toString(false)), seven("true"))
                         .toBlocking().first(),
                 false);
@@ -151,7 +151,7 @@ public class RxComprehensionsTest {
     @Test
     public void eightCM() {
         Assert.assertEquals(RxComprehensions
-                .doCM(zero(1), one(true), two("result"), three("other"), four("other".length()),
+                .doConcatMap(zero(1), one(true), two("result"), three("other"), four("other".length()),
                         five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class))
                 .toBlocking().first(), Long.class);
     }
@@ -159,7 +159,7 @@ public class RxComprehensionsTest {
     @Test
     public void nineCM() {
         final TestSubscriber<Object> observer = TestSubscriber.create();
-        RxComprehensions.doCM(zero(1), one(true), two("result"), three("other"), four("other".length()),
+        RxComprehensions.doConcatMap(zero(1), one(true), two("result"), three("other"), four("other".length()),
                 five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class),
                 this.<Long>nine()).subscribe(observer);
         observer.awaitTerminalEvent();
@@ -171,37 +171,37 @@ public class RxComprehensionsTest {
 
     @Test
     public void oneSM() {
-        Assert.assertEquals(RxComprehensions.doSM(zero(1), one(true)).toBlocking().first(), true);
+        Assert.assertEquals(RxComprehensions.doSwitchMap(zero(1), one(true)).toBlocking().first(), true);
     }
 
     @Test
     public void twoSM() {
-        Assert.assertEquals(RxComprehensions.doSM(zero(2), one(true), two("result")).toBlocking().first(), "result");
+        Assert.assertEquals(RxComprehensions.doSwitchMap(zero(2), one(true), two("result")).toBlocking().first(), "result");
     }
 
     @Test
     public void threeSM() {
         Assert.assertEquals(
-                RxComprehensions.doSM(zero(3), one(true), two("result"), three("other")).toBlocking().first(),
+                RxComprehensions.doSwitchMap(zero(3), one(true), two("result"), three("other")).toBlocking().first(),
                 "other");
     }
 
     @Test
     public void fourSM() {
         Assert.assertEquals(RxComprehensions
-                        .doSM(zero(4), one(true), two("result"), three("other"), four("other".length())).toBlocking().first(),
+                        .doSwitchMap(zero(4), one(true), two("result"), three("other"), four("other".length())).toBlocking().first(),
                 new Long("other".length()));
     }
 
     @Test
     public void fiveSM() {
-        Assert.assertEquals(RxComprehensions.doSM(zero(1), one(true), two("result"), three("other"),
+        Assert.assertEquals(RxComprehensions.doSwitchMap(zero(1), one(true), two("result"), three("other"),
                 four("other".length()), five("other".length() < 5)).toBlocking().first(), false);
     }
 
     @Test
     public void sixSM() {
-        Assert.assertEquals(RxComprehensions.doSM(zero(1), one(true), two("result"), three("other"),
+        Assert.assertEquals(RxComprehensions.doSwitchMap(zero(1), one(true), two("result"), three("other"),
                 four("other".length()), five("other".length() < 5), six(Boolean.toString(false))).toBlocking().first(),
                 "false");
     }
@@ -210,7 +210,7 @@ public class RxComprehensionsTest {
     public void sevenSM() {
         Assert.assertEquals(
                 RxComprehensions
-                        .doSM(zero(1), one(true), two("result"), three("other"), four("other".length()),
+                        .doSwitchMap(zero(1), one(true), two("result"), three("other"), four("other".length()),
                                 five("other".length() < 5), six(Boolean.toString(false)), seven("true"))
                         .toBlocking().first(),
                 false);
@@ -219,7 +219,7 @@ public class RxComprehensionsTest {
     @Test
     public void eightSM() {
         Assert.assertEquals(RxComprehensions
-                .doSM(zero(1), one(true), two("result"), three("other"), four("other".length()),
+                .doSwitchMap(zero(1), one(true), two("result"), three("other"), four("other".length()),
                         five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class))
                 .toBlocking().first(), Long.class);
     }
@@ -227,7 +227,7 @@ public class RxComprehensionsTest {
     @Test
     public void nineSM() {
         final TestSubscriber<Object> observer = TestSubscriber.create();
-        RxComprehensions.doSM(zero(1), one(true), two("result"), three("other"), four("other".length()),
+        RxComprehensions.doSwitchMap(zero(1), one(true), two("result"), three("other"), four("other".length()),
                 five("other".length() < 5), six(Boolean.toString(false)), seven("true"), eight(Long.class),
                 this.<Long>nine()).subscribe(observer);
         observer.awaitTerminalEvent();
@@ -239,47 +239,47 @@ public class RxComprehensionsTest {
 
     @Test
     public void oneCo() throws Exception {
-        Assert.assertEquals((RxComprehensions.doCo(zero(0), intIncrementToString()).toBlocking().first()), "1");
+        Assert.assertEquals((RxComprehensions.doCompose(zero(0), intIncrementToString()).toBlocking().first()), "1");
     }
 
     @Test
     public void twoCo() throws Exception {
-        Assert.assertEquals((long)RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt()).toBlocking().first(), 1);
+        Assert.assertEquals((long)RxComprehensions.doCompose(zero(0), intIncrementToString(), stringToInt()).toBlocking().first(), 1);
     }
 
     @Test
     public void threeCo() throws Exception {
-        Assert.assertEquals((RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first()), "2");
+        Assert.assertEquals((RxComprehensions.doCompose(zero(0), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first()), "2");
     }
 
     @Test
     public void fourCo() throws Exception {
-        Assert.assertEquals((long)RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first(), 2);
+        Assert.assertEquals((long)RxComprehensions.doCompose(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first(), 2);
     }
 
     @Test
     public void fiveCo() throws Exception {
-        Assert.assertEquals((RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first()), "3");
+        Assert.assertEquals((RxComprehensions.doCompose(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first()), "3");
     }
 
     @Test
     public void sixCo() throws Exception {
-        Assert.assertEquals((long)RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first(), 3);
+        Assert.assertEquals((long)RxComprehensions.doCompose(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first(), 3);
     }
 
     @Test
     public void sevenCo() throws Exception {
-        Assert.assertEquals((RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first()), "4");
+        Assert.assertEquals((RxComprehensions.doCompose(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first()), "4");
     }
 
     @Test
     public void eightCo() throws Exception {
-        Assert.assertEquals((long)RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first(), 4);
+        Assert.assertEquals((long)RxComprehensions.doCompose(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt()).toBlocking().first(), 4);
     }
 
     @Test
     public void nineCo() throws Exception {
-        Assert.assertEquals((RxComprehensions.doCo(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first()), "5");
+        Assert.assertEquals((RxComprehensions.doCompose(zero(0), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString(), stringToInt(), intIncrementToString()).toBlocking().first()), "5");
     }
 
     // region Helpers

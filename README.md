@@ -29,12 +29,12 @@ Observable<String> getUserFriends =
 
 ### Map comprehensions
 
-RxComprehensions contains static methods `doFM()` for `flatMap()`, `doCM()` for `concatMap()`, `doSM()` for `switchMap()`. Each takes from 1 to 9 `FuncN` each with an increasing number of parameters, and returns an `Observable` of the type of the return of the last function.
+RxComprehensions contains static methods `doFlatMap()` for `flatMap()`, `doConcatMap()` for `concatMap()`, `doSwitchMap()` for `switchMap()`. Each takes from 1 to 9 `FuncN` each with an increasing number of parameters, and returns an `Observable` of the type of the return of the last function.
 
 ```java
 Observable<String> getUserFriends =
     // chained with flatMap()
-    RxComprehensions.doFM(
+    RxComprehensions.doFlatMap(
         () -> profileClicks(),
         position -> getUserFromProfile(position),
         position, user -> requestFriendListForUser(position, user.id),
@@ -45,12 +45,12 @@ Observable<String> getUserFriends =
 
 ### Compose comprehensions
 
-RxComprehensions contains static methods `doCo()` for `compose()`. Each takes from 1 to 9 `Transformer<T, U>` (RxJava 1.X) or `ObservableTransformer<T, U>` (RxJava 2.X), and returns an `Observable` of the type of the return of the last one.
+RxComprehensions contains static methods `doCompose()` for `compose()`. Each takes from 1 to 9 `Transformer<T, U>` (RxJava 1.X) or `ObservableTransformer<T, U>` (RxJava 2.X), and returns an `Observable` of the type of the return of the last one.
 
 ```java
 Observable<List<Siblings>> getRelatives =
     // chained with compose()
-    RxComprehensions.doCo(
+    RxComprehensions.doCompose(
         () -> requestRelative("12345"),
         validate(),
         assureThreads(Schedulers.io(), AndroidSchedulers.main()),
@@ -86,7 +86,7 @@ repositories {
     
 dependencies {
     ...
-    compile 'com.github.pakoito.RxComprehensions:rxcomprehensions:1.2.0'
+    compile 'com.github.pakoito.RxComprehensions:rxcomprehensions:1.3.0'
     ...
 }
 ```
@@ -103,7 +103,7 @@ or to your `pom.xml`
 <dependency>
     <groupId>com.github.pakoito.RxComprehensions</groupId>
     <artifactId>rxcomprehensions</artifactId>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
 </dependency>
 ```
 
@@ -119,7 +119,7 @@ repositories {
     
 dependencies {
     ...
-    compile 'com.github.pakoito.RxComprehensions:rxcomprehensions2:1.2.0'
+    compile 'com.github.pakoito.RxComprehensions:rxcomprehensions2:1.3.0'
     ...
 }
 ```
@@ -136,7 +136,7 @@ or to your `pom.xml`
 <dependency>
     <groupId>com.github.pakoito.RxComprehensions</groupId>
     <artifactId>rxcomprehensions2</artifactId>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
 </dependency>
 ```
 
