@@ -23,7 +23,7 @@ sourceCompatibility = 1.6
 targetCompatibility = 1.6
 
 dependencies {
-    compile 'io.reactivex:rxjava:1.2.5'
+    compile 'io.reactivex:rxjava:1.2.7'
     testCompile 'junit:junit:4.12'
 }
 
